@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assetsnew/logo/expo-logo.png" />
+    <meta name="keyphrase" content="Exclusive 3D platform" />
+    <meta name="meta title" content="Explore India's Finest Machine Tools businesses at the Expo Hall" />
+    <meta
+      name="keywords"
+      content="Machine tools Expo, Industrial machine tool expo, Digital manufacturing expo, machine tools equipment, Power tools exhibition, virtual machine tools expo, Industrial machine tool expo, manufacturing industry, machine tools manufacturers and suppliers"
+    />
+    <meta
+      name="description"
+      content="Step into the Machine Tools Expo Online Hall to discover stalls from leading manufacturers and suppliers across India."
+    />
+    <title>Explore India's Finest Machine Tools businesses at the Expo Hall</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="encrypt.js"></script>
+    <style>
+
+      .toDClose {
+        position: absolute;
+        right: 20px;
+        top: 34px;
+      }
+      .custName {
+        color: #323232;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        max-width: 190px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .icons img {
+        width: 28px;
+        height: 28px;
+      }
+      .chat {
+        width: 90%;
+        text-align: end;
+        padding: 15px 0 0 0;
+        position: relative;
+        z-index: 999;
+      }
+      .custDetails {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 11px;
+        border: 1px solid #a81920;
+        position: relative;
+        width: 90%;
+        margin: 0 auto 10px auto;
+      }
+      img.custImg {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        border-top-left-radius: 11px;
+        border-bottom-left-radius: 11px;
+      }
+      .mediaIconsSection {
+        position: absolute;
+        right: 10px;
+      }
+      img.mediaIcons {
+        height: 30px;
+      }
+      .custNum {
+        color: #5e5e5e;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFF0F0;
+        height: 100%;
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        position: absolute;
+        content: '';
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        display: none;
+      }
+      body.overlay::before {
+        display: block;
+      }
+      #popup-card {
+        border-radius: 10px;
+        background: #e7f0ff;
+        position: relative;
+        z-index: 999;
+        max-width: 450px;
+        width: 100%;
+      }
+      .inviteText {
+        color: #585858;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 40px 0 28px 0;
+        margin: 0;
+      }
+
+      #urlText {
+        color: #363636;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0;
+        padding-bottom: 5px;
+      }
+      .chat-ui-room2 {
+        position: fixed;
+        display: none;
+        /* top: 0; */
+        right: 0;
+        width: 400px;
+        height: 500px;
+        overflow: hidden;
+        border: none;
+        bottom: 135px;
+        z-index: 10000; 
+      }
+
+      .copySection {
+        width: 85%;
+        margin: auto;
+        padding-bottom: 40px;
+      }
+      .global {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      .copyButtonSection {
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #363636;
+      }
+      .whiteCloseIcon {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        cursor: pointer;
+      }
+      .lobbyClass {
+        cursor: pointer;
+      }
+      #copyButton {
+        z-index: 999;
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        background: none;
+        border: none;
+        color: #164fb1;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .visitButton:hover {
+        color: #fff;
+      }
+      .shareButton:hover {
+        color: #164fb1;
+      }
+      #showPopupButton {
+        z-index: 9999;
+        position: relative;
+      }
+      .currentURL {
+        padding: 10px 12px 10px 35px;
+        color: #363636;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: lowercase;
+        border-radius: 5px;
+        border: transparent;
+        background: #fff;
+        width: 280px;
+      }
+      .currentURL:focus {
+        outline: none;
+      }
+      .copyButtonSection {
+        position: relative;
+        display: flex;
+      }
+      @media only screen and (max-width: 500px) {
+        .whiteCloseIcon img {
+          width: 25px;
+          height: 25px;
+        }
+        .copySection {
+          width: 95% !important;
+        }
+        .currentURL {
+          width: 230px !important;
+        }
+        #copyButton {
+          top: 9px;
+          font-size: 14px;
+        }
+      }
+      .digitalPopUp {
+        height: 100vh;
+        display: none;
+        align-items: center;
+        position: absolute; 
+        z-index: 999;
+        width: 100%;
+        text-align: center;
+        top: 0; 
+        justify-content: center;
+      }
+
+      .digitalPopUpContents {
+        border-radius: 10px;
+        background: #e7f0ff;
+        max-width: 600px;
+        margin: auto;
+        padding: 35px 20px;
+        position: relative;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+      .productName {
+        color: #585858;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0 0 3px 0;
+      }
+      .productDescription {
+        color: #585858;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .digitalcopyPopUp {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 35%;
+      }
+      .productPrice {
+        color: #585858;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px 0 20px 0;
+      }
+      .productButtons a {
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 9px 17px;
+        text-decoration: none;
+      }
+      .visitButton {
+        color: #fff;
+        background: #164fb1;
+        border: 1px solid #164fb1;
+        cursor: pointer;
+      }
+      .shareButton {
+        color: #164fb1;
+        border: 1px solid #164fb1;
+        cursor: pointer;
+      }
+      .productButtons {
+        gap: 10px;
+      }
+      .chatClassone {
+        height: 100%;
+      }
+      #chatui2 {
+        width: 100%;
+        height: 100%;
+      }
+      .closeImg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+      }
+      .productDetailsSection {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .productImg {
+        height: 230px;
+        width: 230px;
+        object-fit: contain;
+      }
+      @media only screen and (max-width: 767px) {
+        .productImg {
+          height: 150px;
+          width: 150px;
+        }
+        #popup-card {
+          max-width: 350px;
+          margin: auto;
+        }
+        .digitalPopUpContents {
+          width: 300px;
+        }
+        .productButtons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .productButtons a {
+          width: 100%;
+          text-align: center;
+          font-size: 12px;
+          padding: 7px 5px;
+          max-width: 120px;
+        }
+        .productName,
+        .productPrice {
+          font-size: 16px;
+        }
+        .productPrice {
+          padding: 10px 0 10px 0;
+        }
+        .productDescription {
+          font-size: 14px;
+        }
+        .productDetailsSection {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .indidualChatIcons {
+        position: absolute;
+        top: 17px;
+        right: 24px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        display: none;
+      }
+      .individualChatClose {
+        cursor: pointer;
+      }
+      #chat-ui-room {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .chat-ui-room2 {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .url-copied-alert {
+        display: none;
+      }
+      .dropdown-item:focus,
+      .dropdown-item:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #164fb1 !important;
+      }
+      .dropdown-menu {
+        padding: 0 !important;
+      }
+      .stallHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 20px;
+        background: #fef5df;
+      }
+      .dropdown button {
+        background-color: transparent;
+        border: none;
+      }
+      .menu-icon{
+        width: 13px;
+      }
+      .toggler p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .toggler,
+      .lobbyName {
+        color: #164fb1;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .stallHeader p {
+        margin: 0;
+      }
+      .expoHeadinng {
+        text-transform: uppercase;
+        color: #164fb1;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 7px 10px 5px 11px;
+        border-radius: 5px;
+        border: 1px solid #164fb1;
+      }
+      .companyNameContents img {
+        height: 30px;
+        width: 30px;
+        left: 11%;
+        top: 8%;
+        position: absolute;
+        object-fit: contain;
+      }
+      .stallPageBg {
+        background-image: url('./assetsnew/background_images/bgImg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 19%;
+      }
+      .stallContent {
+        width: 90%;
+        margin: auto;
+      }
+      .stallContentInner {
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 25px 22px 50px 32px;
+        background-image: linear-gradient(to bottom, #FFEFF7 0%, #FFEFF7 80%, #fff 80%, #fff 100%);
+        max-width: 360px;
+        margin: auto;
+      }
+      .companyName {
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #a81920;
+        max-width: 184px;
+        width: 100%;
+      }
+      .companyNameContents {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        top: 3px;
+        justify-content: center;
+      }
+      .stallNum {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .agriProductsContents {
+        display: flex;
+        position: relative;
+        z-index: 9;
+      }
+      .chat-ui-room2 {
+        top: 0 !important;
+      }
+      iframe#chatui2_0 {
+        height: 100%;
+      }
+      .agriProductsContents::before {
+        content: '';
+        position: absolute;
+        background-image: url('./assetsnew/background_images/connector.png');
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        left: 10%;
+        top: -13px;
+        max-width: 314px;
+        background-size: contain;
+      }
+      .agriProductsContents::after {
+        content: '';
+        position: absolute;
+        background-image: url('./assetsnew/background_images/stage.png');
+        background-repeat: no-repeat;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        background-size: contain;
+        top: 92%;
+      }
+      .productSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        max-width: 200px;
+        max-height: 115px;
+      }
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        max-width: 89px;
+        position: relative;
+        padding: 15px 10px;
+        z-index: 9;
+      }
+      .hallNum {
+        position: absolute;
+        right: 22px;
+        top: 6px;
+      }
+      .icons::before {
+        position: absolute;
+        content: '';
+        background-image: url('./assetsnew/background_images/iconsBg.png');
+        background-repeat: no-repeat;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        left: 0;
+        background-size: contain;
+        top: 0%;
+      }
+      .productSection,
+      .hallNum {
+        padding: 20px 00px;
+      }
+      .productSection img {
+        height: 35px;
+        width: 40px;
+        object-fit: contain;
+        border-radius: 10px 10px 10px 2.5px;
+        background: #fff;
+        padding: 5px 4px 4px 3px;
+        cursor: pointer;
+      }
+      .productSection {
+        padding-left: 38px;
+        padding-top: 32px;
+        padding-bottom: 35px;
+      }
+      .footer {
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 99;
+      }
+      .numbersMain {
+        max-width: 125px;
+        display: flex;
+        overflow-x: scroll;
+        gap: 20px;
+      }
+      .footerContents {
+        width: 90%;
+        margin: auto;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hallNumbers {
+        display: flex;
+        align-items: center;
+      }
+      .hallHeading {
+        color: #164fb1;
+        font-size: 12px;
+        font-weight: 600;
+        padding-right: 10px;
+      }
+      .iframe-containerr {
+        position: fixed;
+        z-index: 9999;
+        top: 150px;
+        left: 20px;
+        display: none;
+        width: 100px;
+        height: 200px;
+      }
+      .iframe-urll {
+        position: fixed;
+        z-index: 999;
+        top: 150px;
+        left: 20px;
+        display: none;
+        width: 500px;
+        height: 500px;
+        border: 0px;
+      }
+      .numbers {
+        color: #164fb1;
+        font-size: 20px;
+        font-weight: 600;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media only screen and (max-width: 500px) {
+        .stallContent {
+          width: 100%;
+          margin: auto;
+        }
+        .stallContentInner {
+          padding: 25px 5px 50px 5px;
+        }
+      }
+      @media only screen and (max-width: 370px) {
+        .stallContentInner {
+          max-width: 330px;
+        }
+        .productSection {
+          padding-left: 20px;
+        }
+        .agriProductsContents::before {
+          left: 4%;
+        }
+        .hallNum {
+          position: absolute;
+          right: 8px;
+          top: 4px;
+        }
+        .companyNameContents {
+          gap: 7px;
+        }
+      }
+      .stall {
+        display: none; 
+      }
+      .stall.active {
+        display: block;
+      }
+      .footerContents p {
+        margin: 10px 0;
+      }
+      * {
+        box-sizing: unset !important;
+      }
+
+      .highlighted-button {
+        background-color: #164fb1;
+        border-radius: 50%;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="chat-root"></div>
+ 
+    <div id="root"></div>
+ 
+    <script src="../chatscript/expo-customer-chat.umd.js"></script>
+    <script>
+      // Initialize the chat plugin with options
+      ExpoCustomerChat.initChat({
+        vendorId: '',
+        userId: window.localStorage.getItem('UserName'),
+        mountId: 'chat-root', // optional if different from default
+        chatIconStyles: {
+          bottom: '60px'
+        }
+      });
+    </script>
+    <div class="stallPage"></div>
+       <div id="expo-container"></div>
+  </body>
+<script type="module" src="hallbkp.js"></script>
+  <script src="../businesscardscript/businessCard-drop.umd.js"></script>
+</html>

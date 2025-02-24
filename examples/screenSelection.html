@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keyphrase" content="Exclusive 3D platform" />
+    <meta name="meta title" content="Explore India's Finest Machine Tools businesses at the Expo Hall" />
+    <meta
+      name="keywords"
+      content="Machine tools Expo, Industrial machine tool expo, Digital manufacturing expo, machine tools equipment, Power tools exhibition, virtual machine tools expo, Industrial machine tool expo, manufacturing industry, machine tools manufacturers and suppliers"
+    />
+    <meta
+      name="description"
+      content="Step into the Machine Tools Expo Online Hall to discover stalls from leading manufacturers and suppliers across India."
+    />
+    <title>Explore India's Finest Machine Tools businesses at the Expo Hall</title>
+    <style>
+      /* Global reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      background: #e7f0ff;
+      }
+
+      /* Main container styling with a frosted glass effect */
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        width: 90%;
+        max-width: 500px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #000;
+      }
+
+      /* Cards container */
+      .cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      /* Card styling for radio options */
+      .card {
+        position: relative;
+        width: 120px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Hide the default radio button */
+      .card input[type='radio'] {
+        display: none;
+      }
+
+      /* Card content styling */
+      .card-content {
+        padding: 10px;
+        border-radius: 8px;
+        transition: border 0.3s ease;
+      }
+
+      .card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      .card span {
+        display: block;
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      /* Highlight the selected card with a border */
+      .card input[type='radio']:checked + .card-content {
+        border: 2px solid #ff9800;
+      }
+
+      /* Next button styling */
+      .next-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        color: #fff;
+        background: #ff9800;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .next-btn:hover {
+        background: #e68900;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        .cards-container {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Select Screen Mode</h1>
+      <div class="cards-container">
+        <!-- 2D card -->
+        <label class="card">
+          <input type="radio" name="screen" value="2D" />
+          <div class="card-content">
+            <img src="./assetsnew/icons/2d.png" alt="2D Mode" />
+            <span>2D</span>
+          </div>
+        </label>
+
+        <!-- 3D card -->
+        <label class="card">
+          <input type="radio" name="screen" value="3D" />
+          <div class="card-content">
+            <img src="./assetsnew/icons/3d.png" alt="3D Mode" />
+            <span>3D</span>
+          </div>
+        </label>
+      </div>
+      <button class="next-btn" onclick="handleNext()">Next</button>
+    </div>
+
+    <script>
+      let autoRedirectTimer;
+
+      // Randomly select a screen mode on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        const options = document.querySelectorAll('input[name="screen"]');
+        const randomIndex = Math.floor(Math.random() * options.length);
+        options[randomIndex].checked = true;
+
+        // Set auto-redirect timer for 10 seconds
+        autoRedirectTimer = setTimeout(handleNext, 10000);
+      });
+
+      function handleNext() {
+        // Clear the auto-redirect timer if user interacts manually
+        clearTimeout(autoRedirectTimer);
+
+        // Retrieve the selected option
+        const selected = document.querySelector('input[name="screen"]:checked');
+        if (!selected) {
+          alert('Please select a screen mode.');
+          return;
+        }
+
+        // Save selection in local storage
+        localStorage.setItem('screenSelection', selected.value);
+
+        // Redirect based on the selected option
+        if (selected.value === '2D') {
+          window.location.href = 'categorymapdynmic.html'; // Update with your actual 2D page URL
+        } else if (selected.value === '3D') {
+          window.location.href = 'categorymapdynmic.html'; // Update with your actual 3D page URL
+        }
+      }
+    </script>
+  </body>
+</html>
