@@ -123,7 +123,6 @@
       /* Responsive adjustments */
       @media (max-width: 480px) {
         .cards-container {
-          flex-direction: column;
           gap: 15px;
         }
       }
@@ -164,7 +163,7 @@
         options[randomIndex].checked = true;
 
         // Set auto-redirect timer for 10 seconds
-        autoRedirectTimer = setTimeout(handleNext, 10000);
+        autoRedirectTimer = setTimeout(handleNext, 100000000);
       });
 
       function handleNext() {

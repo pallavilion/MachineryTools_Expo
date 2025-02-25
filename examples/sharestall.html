@@ -97,7 +97,7 @@
     <!-- popu for youtube link -->
     <div class="digitalPopUp" id="vidpopup">
       <div class="digitalPopUpContents">
-        <img class="closeImg" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
+        <img class="closevideo" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
 
         <!-- Video.js Player Container -->
         <div class="videoPlayerContainer">
@@ -392,6 +392,13 @@
         $('.popUp').css('display', 'none');
       });
       $('.closeImg').click(function () {
+        $('.digitalPopUp').css('display', 'none');
+      });
+        $('.closevideo').click(function () {
+         // Get the Video.js player instance and pause it
+         var player = videojs('youtubePlayer');
+         player.pause();
+
         $('.digitalPopUp').css('display', 'none');
       });
       $('.iframeImg').click(function () {

@@ -238,7 +238,7 @@ const fetchDataFromAPI = () => {
                             var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
                             if (videoUrl) {
                                 // If a video link exists, use the mouseenter event to show the video popup
-                                imageElement.addEventListener('mouseenter', function () {
+                                imageElement.addEventListener('click', function () {
                                 
                                     document.getElementById('vidpopup').style.display = 'flex';
 

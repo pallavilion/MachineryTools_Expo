@@ -566,7 +566,7 @@ iframe {
   padding: 35px 20px;
   position: relative;
 }
-.closeImg {
+.closeImg,.closevideo {
   position: absolute;
   right: 10px;
   top: 10px;

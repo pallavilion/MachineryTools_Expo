@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Dry Fruits Mela</title>
+ 
     <link rel="icon" type="image/x-icon" href="./assetsnew/logo/expo-logo.png" />
       <meta name="keyphrase" content="Exclusive 3D platform" />
     <meta name="meta title" content="Explore India's Finest Machine Tools businesses at the Expo Hall" />
@@ -451,7 +451,7 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
     <!-- popu for youtube link -->
   <div class="digitalPopUp" id="vidpopup">
   <div class="digitalPopUpContents">
-    <img class="closeImg" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
+    <img class="closevideo" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
     
     <!-- Video.js Player Container -->
     <div class="videoPlayerContainer">
@@ -2911,6 +2911,15 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
         $('.popUp').css('display', 'none');
       });
       $('.closeImg').click(function () {
+        $('#overallOverLay').css('display','none')
+        $('.digitalPopUp').css('display', 'none');
+        clearPopupData()
+      });
+
+       $('.closevideo').click(function () {
+         // Get the Video.js player instance and pause it
+         var player = videojs('youtubePlayer');
+         player.pause();
         $('#overallOverLay').css('display','none')
         $('.digitalPopUp').css('display', 'none');
         clearPopupData()

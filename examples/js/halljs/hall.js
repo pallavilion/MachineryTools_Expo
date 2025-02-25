@@ -508,7 +508,6 @@ const fetchDataFromAPI = () => {
 
               imageElement.setAttribute('src', imageUrl);
               imageElement.setAttribute('rotation', '0 90 0');
-              
               // imageElement.addEventListener('click', function () {
               //   overalloverlay.style.display = 'flex';
               //   document.getElementById('popup').style.display = 'flex';
@@ -576,10 +575,10 @@ const fetchDataFromAPI = () => {
               //   tracking(stall.uno, 'product', imageDescription);
               //   trackinga('product', 'hallpage');
               // });
-              var videoUrl ="https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
+              var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
               if (videoUrl) {
                 // If a video link exists, use the mouseenter event to show the video popup
-                imageElement.addEventListener('mouseenter', function () {
+                imageElement.addEventListener('click', function () {
                   overalloverlay.style.display = 'flex';
                   document.getElementById('vidpopup').style.display = 'flex';
 
@@ -1234,3 +1233,13 @@ document.getElementById('mblhelpicon').addEventListener('click', function () {
 document.querySelector('.help-close-button').addEventListener('click', function () {
   document.getElementById('help-overlay').style.display = 'none';
 });
+
+// document.querySelector('.closevideo').addEventListener('click', function () {
+//   // Hide the popup
+//   document.getElementById('vidpopup').style.display = 'none';
+
+//   // Get the Video.js player instance and pause it
+//   var player = videojs('youtubePlayer');
+//   player.pause();
+// });
+
