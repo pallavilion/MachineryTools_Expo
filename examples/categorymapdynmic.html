@@ -40,11 +40,14 @@
   <body>
     <div id="root"></div>
     <div class="categoryMap">
-      <button onclick="changebusinessid(localStorage.getItem('UserName'))">Drop your Business Card</button>
+     
       <div class="categoryMapContents">
         <h2 class="categoryheading">Get Started</h2>
         <p class="categoryDescription">Find what you need by Category</p>
       </div>
+       <div onclick="changebusinessid(localStorage.getItem('UserName'))" class="drop-business-card-category">
+          <img src="./assetsnew/icons/drop-business-card-icon.png" alt="" class="drop-business-card-category-image">
+        Drop Business Card</div>
       <div class="categories">
         <div class="categoryContents" id="categoryContents">
           <!-- api dynamic rendering -->

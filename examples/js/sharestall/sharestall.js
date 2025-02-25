@@ -235,41 +235,55 @@ const fetchDataFromAPI = () => {
                             imageElement.setAttribute("height", height);
                            imageElement.setAttribute("src", imageUrl); 
                             imageElement.setAttribute("rotation", "0 90 0");
-                            imageElement.addEventListener('click', function () {
-                            document.getElementById('popup').style.display='flex'
-                            document.getElementById('productimge').setAttribute('src',imageUrl)
-                            document.getElementById('prdt-name').textContent=imageDescription
-                            document.getElementById('cost').textContent=stall.products[imageIndex].price
-                            document.getElementById('prdt-units').textContent=stall.products[imageIndex].unit
-                            document.getElementById('visit-prdt-btn').setAttribute('href',stall.products[imageIndex].productlink)
-                            document.getElementById('share-prdt').addEventListener('click', function showPopup() {
-                                    // var currentURL1 = window.location.href;
-                                    // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-                                    var newURL = `${stall.products[imageIndex].productlink}`;
-                                    var popupOverlay = document.getElementById('popup-overlay');
-                                    var currentURLInput = document.getElementById('currentURL');
-                                    currentURLInput.value = newURL;
-                                    document.getElementById('urlText').textContent = "Product Link"
-                                    document.querySelector('.inviteText').textContent = "Share Product Link"
-                                    popupOverlay.style.display = 'flex';
-                                    // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
-                                    // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
-                                })
+                            var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
+                            if (videoUrl) {
+                                // If a video link exists, use the mouseenter event to show the video popup
+                                imageElement.addEventListener('mouseenter', function () {
+                                
+                                    document.getElementById('vidpopup').style.display = 'flex';
+
+                                    // Update product details
+                                    document.getElementById('productimge').setAttribute('src', imageUrl);
+                                    document.getElementById('prdt-name').textContent = imageDescription;
+                                    document.getElementById('cost').textContent = stall.products[imageIndex].price;
+                                    document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
+                                    document.getElementById('visit-prdt-btn-1').setAttribute('href', stall.products[imageIndex].productlink);
+                                    console.log("product link", stall.products[imageIndex].productlink);
+
+                                    // Retrieve the dynamic video URL and update the Video.js player
+                                    // var videoUrl = stall.products[imageIndex].videoUrl;
+                                    var player = videojs('youtubePlayer');
+                                    player.src({ type: 'video/youtube', src: videoUrl });
+                                    player.play();
+
+                                  
+                                });
+                            } else {
+
+                                imageElement.addEventListener('click', function () {
+                                    document.getElementById('popup').style.display = 'flex'
+                                    document.getElementById('productimge').setAttribute('src', imageUrl)
+                                    document.getElementById('prdt-name').textContent = imageDescription
+                                    document.getElementById('cost').textContent = stall.products[imageIndex].price
+                                    document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit
+                                    document.getElementById('visit-prdt-btn').setAttribute('href', stall.products[imageIndex].productlink)
+                                    document.getElementById('share-prdt').addEventListener('click', function showPopup() {
+                                        // var currentURL1 = window.location.href;
+                                        // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+                                        var newURL = `${stall.products[imageIndex].productlink}`;
+                                        var popupOverlay = document.getElementById('popup-overlay');
+                                        var currentURLInput = document.getElementById('currentURL');
+                                        currentURLInput.value = newURL;
+                                        document.getElementById('urlText').textContent = "Product Link"
+                                        document.querySelector('.inviteText').textContent = "Share Product Link"
+                                        popupOverlay.style.display = 'flex';
+                                        // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
+                                        // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
+                                    })
                                
-                                // Update the text and image source of the popup
-                                // document.getElementById(`popup${stallIndex + 1}`).setAttribute("visible", true);
-                                // document.getElementById(`productName${stallIndex + 1}`).setAttribute("value", imageDescription);
-                                // document.getElementById(`popupimage${stallIndex + 1}`).setAttribute("src", imageUrl);
-                                // document.getElementById(`productPrice${stallIndex + 1}`).setAttribute("value", `Price: ${stall.products[imageIndex].price} / ${stall.products[imageIndex].unit}`);
-                                // Make the popuplane1 visible
-                                // document.getElementById(`visitiproduct${stallIndex + 1}`).setAttribute("cursor-listener",
-                                //     `targetPage:${stall.products[imageIndex].productlink}; uno: ${stall.uno}; type: visiting-website-via-products; pdtname: ${imageDescription}`);
-                                // document.getElementById(`shareproduct${stallIndex + 1}`).addEventListener('click',
-                        //  );
-
-
-                                // trackExpo(stall.uno, "product", imageDescription, ipAddress);
-                           });
+                  
+                                });
+                            }
 
 
                             // // Create popup element

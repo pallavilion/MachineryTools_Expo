@@ -283,7 +283,7 @@ const fetchDataFromAPI = () => {
           c = parseInt(c);
           var bannerElements = document.getElementById('ban');
           bannerElements.setAttribute('gltf-model', `assetsnew/hallNumbers/banner${c}.glb`);
-         
+
         } else {
           //console.log("switch case odd is behaving")
           if (b >= 1) {
@@ -508,44 +508,129 @@ const fetchDataFromAPI = () => {
 
               imageElement.setAttribute('src', imageUrl);
               imageElement.setAttribute('rotation', '0 90 0');
-              imageElement.addEventListener('click', function () {
-                overalloverlay.style.display = 'flex';
-                document.getElementById('popup').style.display = 'flex';
+              
+              // imageElement.addEventListener('click', function () {
+              //   overalloverlay.style.display = 'flex';
+              //   document.getElementById('popup').style.display = 'flex';
 
-                document.getElementById('productimge').setAttribute('src', imageUrl);
-                document.getElementById('prdt-name').textContent = imageDescription;
-                document.getElementById('cost').textContent = stall.products[imageIndex].price;
-                document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
-                document.getElementById('visit-prdt-btn').setAttribute('href', stall.products[imageIndex].productlink);
+              //   document.getElementById('productimge').setAttribute('src', imageUrl);
+              //   document.getElementById('prdt-name').textContent = imageDescription;
+              //   document.getElementById('cost').textContent = stall.products[imageIndex].price;
+              //   document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
+              //   document.getElementById('visit-prdt-btn').setAttribute('href', stall.products[imageIndex].productlink);
 
-                document
-                  .getElementById('visit-prdt-btn')
-                  .setAttribute('onclick', `tracking(${stall.uno}, "visit-product-website",''); return true;`);
+              //   document
+              //     .getElementById('visit-prdt-btn')
+              //     .setAttribute('onclick', `tracking(${stall.uno}, "visit-product-website",''); return true;`);
 
-                document.getElementById('share-prdt').addEventListener('click', function showPopup() {
-                  document.getElementById('popup').style.opacity = 0;
-                  // var currentURL1 = window.location.href;
-                  // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
-                  var newURL = `${stall.products[imageIndex].productlink}`;
-                  var popupOverlay = document.getElementById('popup-overlay');
-                  var currentURLInput = document.getElementById('currentURL');
-                  currentURLInput.value = newURL;
-                  // if(selectedLanguages=='hindi'){
-                  //     document.getElementById('urlText').textContent = "उत्पाद लिंक"
-                  // document.querySelector('.inviteText').textContent = "उत्पाद लिंक साझा करें"
-                  // }else{
-                  // document.getElementById('urlText').textContent = "Product Link"
-                  // document.querySelector('.inviteText').textContent = "Share Product Link"
-                  // }
-                  setTextContent(selectedLanguage);
-                  popupOverlay.style.display = 'flex';
-                  // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
-                  tracking(stall.uno, 'share-product', imageDescription);
-                  // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
+              //   document.getElementById('share-prdt').addEventListener('click', function showPopup() {
+              //     document.getElementById('popup').style.opacity = 0;
+              //     // var currentURL1 = window.location.href;
+              //     // var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1); // Extracts the base URL
+              //     var newURL = `${stall.products[imageIndex].productlink}`;
+              //     var popupOverlay = document.getElementById('popup-overlay');
+              //     var currentURLInput = document.getElementById('currentURL');
+              //     currentURLInput.value = newURL;
+              //     // if(selectedLanguages=='hindi'){
+              //     //     document.getElementById('urlText').textContent = "उत्पाद लिंक"
+              //     // document.querySelector('.inviteText').textContent = "उत्पाद लिंक साझा करें"
+              //     // }else{
+              //     // document.getElementById('urlText').textContent = "Product Link"
+              //     // document.querySelector('.inviteText').textContent = "Share Product Link"
+              //     // }
+              //     setTextContent(selectedLanguage);
+              //     popupOverlay.style.display = 'flex';
+              //     // trackExpo(stall.uno, "share-product", imageDescription, ipAddress);
+              //     tracking(stall.uno, 'share-product', imageDescription);
+              //     // gtag("event", "share-stall", { 'page_title': "Hall-Page" });
+              //   });
+              //   tracking(stall.uno, 'product', imageDescription);
+              //   trackinga('product', 'hallpage');
+              // });
+
+
+
+              // imageElement.addEventListener('mouseenter', function () {
+              //   overalloverlay.style.display = 'flex';
+              //   document.getElementById('vidpopup').style.display = 'flex';
+
+              //   // Update product details
+              //   document.getElementById('productimge').setAttribute('src', imageUrl);
+              //   document.getElementById('prdt-name').textContent = imageDescription;
+              //   document.getElementById('cost').textContent = stall.products[imageIndex].price;
+              //   document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
+              //   document.getElementById('visit-prdt-btn-1').setAttribute('href', stall.products[imageIndex].productlink);
+              //   console.log("product link")
+              //   console.log(stall.products[imageIndex].productlink)
+
+              //   // Retrieve the dynamic video URL from your data
+              //   var videoUrl = stall.products[imageIndex].videoUrl; // Make sure your data includes this property
+
+              //   // Get the Video.js player instance and update its source
+              //   var player = videojs('youtubePlayer');
+              //   player.src({ type: 'video/youtube', src: "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3" });
+
+              //   // Optionally, start playing the video if autoplay is desired
+              //   player.play();
+
+              //   tracking(stall.uno, 'product', imageDescription);
+              //   trackinga('product', 'hallpage');
+              // });
+              var videoUrl ="https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
+              if (videoUrl) {
+                // If a video link exists, use the mouseenter event to show the video popup
+                imageElement.addEventListener('mouseenter', function () {
+                  overalloverlay.style.display = 'flex';
+                  document.getElementById('vidpopup').style.display = 'flex';
+
+                  // Update product details
+                  document.getElementById('productimge').setAttribute('src', imageUrl);
+                  document.getElementById('prdt-name').textContent = imageDescription;
+                  document.getElementById('cost').textContent = stall.products[imageIndex].price;
+                  document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
+                  document.getElementById('visit-prdt-btn-1').setAttribute('href', stall.products[imageIndex].productlink);
+                  console.log("product link", stall.products[imageIndex].productlink);
+
+                  // Retrieve the dynamic video URL and update the Video.js player
+                  // var videoUrl = stall.products[imageIndex].videoUrl;
+                  var player = videojs('youtubePlayer');
+                  player.src({ type: 'video/youtube', src: videoUrl });
+                  player.play();
+
+                  tracking(stall.uno, 'product', imageDescription);
+                  trackinga('product', 'hallpage');
                 });
-                tracking(stall.uno, 'product', imageDescription);
-                trackinga('product', 'hallpage');
-              });
+              } else {
+                // If no video link exists, use the click event to show the product details popup
+                imageElement.addEventListener('click', function () {
+                  overalloverlay.style.display = 'flex';
+                  document.getElementById('popup').style.display = 'flex';
+
+                  // Update product details
+                  document.getElementById('productimge').setAttribute('src', imageUrl);
+                  document.getElementById('prdt-name').textContent = imageDescription;
+                  document.getElementById('cost').textContent = stall.products[imageIndex].price;
+                  document.getElementById('prdt-units').textContent = stall.products[imageIndex].unit;
+                  document.getElementById('visit-prdt-btn').setAttribute('href', stall.products[imageIndex].productlink);
+
+                  document.getElementById('visit-prdt-btn').setAttribute('onclick', `tracking(${stall.uno}, "visit-product-website",''); return true;`);
+
+                  document.getElementById('share-prdt').addEventListener('click', function showPopup() {
+                    document.getElementById('popup').style.opacity = 0;
+                    var newURL = `${stall.products[imageIndex].productlink}`;
+                    var popupOverlay = document.getElementById('popup-overlay');
+                    var currentURLInput = document.getElementById('currentURL');
+                    currentURLInput.value = newURL;
+                    setTextContent(selectedLanguage);
+                    popupOverlay.style.display = 'flex';
+                    tracking(stall.uno, 'share-product', imageDescription);
+                  });
+
+                  tracking(stall.uno, 'product', imageDescription);
+                  trackinga('product', 'hallpage');
+                });
+              }
+
 
               // // Create popup element
               const popupElement = document.createElement('a-entity');

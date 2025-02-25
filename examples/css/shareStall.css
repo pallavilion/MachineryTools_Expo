@@ -527,7 +527,25 @@ iframe {
   padding: 9px 17px;
   text-decoration: none;
 }
+.productButtonSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.productButtonSection a {
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 9px 17px;
+  text-decoration: none;
+}
 .visitButton {
+  color: #fff;
+  background: #164fb1;
+  border: 1px solid #164fb1;
+}
+.visitButton1 {
   color: #fff;
   background: #164fb1;
   border: 1px solid #164fb1;
@@ -758,6 +776,23 @@ iframe {
 }
 
 #popup {
+  height: 100vh;
+
+  width: 100%;
+
+  display: none;
+
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.1);
+
+  position: absolute;
+
+  z-index: 9999;
+
+  top: 0;
+}
+#vidpopup {
   height: 100vh;
 
   width: 100%;

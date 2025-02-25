@@ -18,6 +18,19 @@ h6 {
   font-weight: 600;
   padding-bottom: 5px;
 }
+.drop-business-card-category {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+      top: 25px;
+    right: 67px;
+  align-items: center;
+}
+.drop-business-card-category-image {
+  width: 100px;
+  height: 100px;
+}
 .categoryDescription {
   color: #5a463f;
   font-size: 22px;
@@ -64,6 +77,7 @@ p.categoryName {
 .categoryMap {
   padding: 60px 0 170px 0;
   background: #e7f0ff;
+  position: relative;
 }
 .categoryName {
   color: #5a463f;

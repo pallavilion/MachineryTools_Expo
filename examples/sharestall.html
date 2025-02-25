@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-      <meta name="keyphrase" content="Exclusive 3D platform" />
+    <meta name="keyphrase" content="Exclusive 3D platform" />
     <meta name="meta title" content="Explore India's Finest Machine Tools businesses at the Expo Hall" />
     <meta
       name="keywords"
@@ -15,6 +15,16 @@
     <link rel="icon" type="image/x-icon" href="./assetsnew/logo/expo-logo.png" />
     <meta name="description" content="Nametag — Networked-Aframe" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+
+    <!-- Video.js JS -->
+    <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+
+    <!-- Video.js YouTube Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="/dist/networked-aframe.js"></script>
@@ -47,7 +57,7 @@
         autoplay
       >
       </dotlottie-player> -->
-          <img src="assetsnew/loading/loading gif.gif" alt="loading-icon">
+      <img src="assetsnew/loading/loading gif.gif" alt="loading-icon" />
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
     <!-- orientation -->
@@ -84,7 +94,33 @@
         </div>
       </div>
     </div>
+    <!-- popu for youtube link -->
+    <div class="digitalPopUp" id="vidpopup">
+      <div class="digitalPopUpContents">
+        <img class="closeImg" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
 
+        <!-- Video.js Player Container -->
+        <div class="videoPlayerContainer">
+          <video
+            id="youtubePlayer"
+            class="video-js vjs-default-skin"
+            controls
+            width="560"
+            height="315"
+            data-setup='{
+               "autoplay": true,
+               "techOrder": ["youtube"],
+               "sources": [{ "type": "video/youtube", "src": "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3" }]
+             }'
+          ></video>
+        </div>
+
+        <!-- Visit Product Button -->
+        <div class="productButtonSection">
+          <a class="visitButton1" id="visit-prdt-btn-1" target="_blank" href="">Visit Product</a>
+        </div>
+      </div>
+    </div>
     <!--sharestall and product  -->
     <div id="popup-overlay">
       <div id="popup-card">
@@ -98,7 +134,9 @@
           </div>
           <p class="url-copied-alert" id="url-copied-alert-txt">URL copied to clipboard!</p>
         </div>
-        <button class="whiteCloseIcon" onClick="closePopup1()"><img src="./assetsnew/icons/blueCloseIcon.png" /></button>
+        <button class="whiteCloseIcon" onClick="closePopup1()">
+          <img src="./assetsnew/icons/blueCloseIcon.png" />
+        </button>
       </div>
     </div>
     <!-- sharestall -->

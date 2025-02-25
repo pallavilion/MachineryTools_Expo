@@ -19,6 +19,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.slim.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+    <!-- Video.js CSS -->
+<link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+
+<!-- Video.js JS -->
+<script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+
+<!-- Video.js YouTube Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/videojs-youtube/dist/Youtube.min.js"></script>
+
     <script src="/easyrtc/easyrtc.js"></script>
     <script src="/dist/networked-aframe.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -436,8 +445,37 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
           </div>
         </div>
       </div>
-      `
+      
     </div>
+
+    <!-- popu for youtube link -->
+  <div class="digitalPopUp" id="vidpopup">
+  <div class="digitalPopUpContents">
+    <img class="closeImg" src="./assetsnew/icons/blueCloseIcon.png" alt="closeicon" />
+    
+    <!-- Video.js Player Container -->
+    <div class="videoPlayerContainer">
+      <video id="youtubePlayer"
+             class="video-js vjs-default-skin"
+             controls
+             width="560"
+             height="315"
+             data-setup='{
+               "autoplay": true,
+               "techOrder": ["youtube"],
+               "sources": [{ "type": "video/youtube", "src": "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3" }]
+             }'>
+      </video>
+    </div>
+    
+    <!-- Visit Product Button -->
+    <div class="productButtonSection">
+      <a class="visitButton1" id="visit-prdt-btn-1" target="_blank" href="">Visit Product</a>
+    </div>
+  </div>
+</div>
+
+     <!-- end -->
 
     <!--sharestall and product  -->
     <div id="popup-overlay">
@@ -590,7 +628,7 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
         <img id="visit-stall-button" src="./assetsnew/icons/visitHall-button.png" alt="stallbutton"/>
         <img id="stall-next" src="./assetsnew/icons/next-button.png" alt="nextbtton"/>
         <img id="stall-prev" src="./assetsnew/icons/prev-button.png" alt="prevbutton"/>
-        <img id="drop-business-card" src="assetsnew/icons/business-card.png" alt="business-card"/>
+        <img id="drop-business-card" src="./assetsnew/icons/drop-business-card-icon.png" alt="business-card"/>
 <template id="rig-template">
           <a-entity></a-entity>
         </template>
