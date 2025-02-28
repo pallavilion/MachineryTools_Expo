@@ -404,6 +404,21 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
         .welcomeDescription {
           font-size: 50px;
         }
+        .expo_logo {
+          margin-bottom: 30px;
+        }
+        .poweredByDesktop {
+          padding-top: 80px;
+        }
+        .enterExpoButton {
+          margin-top: 40px;
+        }
+        .welcomeDescription {
+          margin-bottom: 30px;
+        }
+        .expo_logo {
+          max-width: 300px;
+        }
       }
       @media only screen and (max-width: 1400px) {
         .welcomeDescription {
@@ -464,12 +479,28 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
       }
       @media only screen and (max-width: 767px) {
         .welcomeText {
-          font-size: 22px;
+          font-size: 30px;
           padding: 5px 0;
         }
         .poweredByDesktop {
-          width: unset;
+          width: 100%;
           max-width: unset;
+        }
+        .expo_logo {
+          max-width: 280px;
+        }
+        .termsSection {
+          justify-content: center;
+        }
+
+        .sectionOne {
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+        .termsSection {
+          width: 100%;
+          padding-top: 10px;
         }
         .agriIntro::before {
           position: absolute;
@@ -480,7 +511,7 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
           z-index: -1;
         }
         .welcomeDescription {
-          font-size: 25px;
+          font-size: 40px;
         }
         .languageSection p {
           font-size: 16px;
@@ -491,14 +522,24 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
           font-size: 14px;
         }
         .enterExpoButton {
-          font-size: 16px;
+          font-size: 22px;
         }
         .languageDropdown select {
-          padding: 7px;
+          padding: 12px;
         }
         .sections {
           justify-content: unset;
           padding-top: 30px;
+        }
+        .enterButton {
+          width: 80%;
+        }
+        .enterButton button {
+          width: 100%;
+          max-width: 100%;
+        }
+        .chooseText {
+          font-size: 25px;
         }
       }
       @media only screen and (max-width: 550px) {
@@ -509,8 +550,20 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
           flex-direction: column;
           gap: 10px;
         }
-        .expo_logo {
-          max-width: 150px;
+        .welcomeDescription {
+          font-size: 31px;
+        }
+        .welcomeDescription {
+          margin: 5px 0 15px 0;
+        }
+        .welcomeDescription {
+          padding-bottom: 0;
+        }
+        .enterButton,
+        .languageDropdown,
+        .languageSelectionContent,
+        .languageDropdown select {
+          width: 100%;
         }
       }
       @media only screen and (max-width: 500px) {
@@ -522,10 +575,14 @@ https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
           max-width: 200px;
         }
       }
-      @media only screen and (max-width: 380px) {
+      @media only screen and (max-width: 390px) {
         .termsSection a {
           position: absolute;
-          left: 129px;
+          left: 105px;
+          top: 29px;
+        }
+        .termsSection {
+          position: relative;
         }
       }
     </style>
@@ -652,12 +709,12 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
 
       const model1 = document.createElement('a-asset-item');
       model1.setAttribute('id', 'hallmodel');
-      model1.setAttribute('src', 'assetsnew/hallModel/HallOptimized.glb');
+      model1.setAttribute('src', './assetsnew/hallModel/HallOptimized.glb');
       assets.appendChild(model1);
 
       const model2 = document.createElement('a-asset-item');
       model2.setAttribute('id', 'stall');
-      model2.setAttribute('src', 'assetsnew/stallmodel/Stall.glb');
+      model2.setAttribute('src', './assetsnew/stallmodel/Stall.glb');
       assets.appendChild(model2);
 
       // Add more assets as needed

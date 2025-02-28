@@ -335,7 +335,7 @@ iframe {
   gap: 26px;
   padding: 12px 12px 25px 12px;
   position: absolute;
-  z-index: 9998;
+  z-index: 99;
 
   margin-bottom: 30px;
   bottom: 0;
@@ -538,6 +538,9 @@ iframe {
   border-radius: 5px;
   padding: 9px 17px;
   text-decoration: none;
+}
+.productButtonSection a:hover {
+  color: #fff;
 }
 .visitButton {
   color: #fff;
@@ -2196,8 +2199,8 @@ iframe {
 }
 
 .loading-container1 img {
-  width: 200px; /* Loading image size */
-  height: 200px;
+  width: 150px; /* Loading image size */
+  height: 150px;
 }
 
 .loading-container1 p {

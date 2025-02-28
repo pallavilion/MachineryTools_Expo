@@ -207,11 +207,45 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
     <div id="chat-root"></div>
     <script src="./chatscript/expo-customer-chat.umd.js"></script>
     <script>
+      var parser = new UAParser();
+var result = parser.getResult();
+var deviceType = result.device.type;
+
+// Define a default style object
+var chatIconStyles = {
+  bottom: "60px",
+  // Default style for non-mobile devices:
+ 
+};
+
+if (deviceType === 'mobile') {
+  // Update styles for mobile devices
+  chatIconStyles = {
+    display: "flex",
+    alignItems: "center",
+    gap: "5px",
+    position: "absolute",
+    zIndex: "99",
+    marginBottom: "10px",
+    bottom: "0px",
+    minHeight: "50px",
+    right: "311px"  // Mobile-specific right value
+  };
+}
+
+// ExpoCustomerChat.initChat({
+//   vendorId: "",
+//   userId: window.localStorage.getItem('UserName'),
+//   mountId: "chat-root", // optional if different from default
+//   chatIconStyles: chatIconStyles
+// });
+
       // Initialize the chat plugin with options
       ExpoCustomerChat.initChat({
         vendorId: "",
         userId: window.localStorage.getItem('UserName'),
         mountId: "chat-root", // optional if different from default
+        chatIconStyles
       });
     </script>
 
@@ -463,7 +497,7 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
              data-setup='{
                "autoplay": true,
                "techOrder": ["youtube"],
-               "sources": [{ "type": "video/youtube", "src": "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3" }]
+               "sources": [{ "type": "video/youtube", "src": "" }]
              }'>
       </video>
     </div>
@@ -556,13 +590,13 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
           </div>
   </div>
     <!-- end of help icon  for mobike -->
-    <div class="mblchatDisplay" id="mblchatplaceholder">
+    <!-- <div class="mblchatDisplay" id="mblchatplaceholder">
       <div class="icon tooltipChat" id="mblchat">
         <div class="smallScreenChatNotification" id="smallscreennot">20</div>
         <img class="chatIcon" src="./assetsnew/icons/chaticon.png" alt="chaticon"/>
         <p class="labelText labelchat">Chat</p>
       </div>
-    </div>
+    </div> -->
     <!-- end of extra chat for mobile -->
 
     <!-- currently unecessary -->
@@ -3542,4 +3576,42 @@ document.getElementById('player').setAttribute('position', { x: newX, y: newY, z
  
     // })
   </script>
+
+
+<script>
+     var parser = new UAParser();
+      var result = parser.getResult();
+      var useragent = result.device.type;
+      var os = result.os.name;
+  if (useragent == 'mobile') {
+  // document.getElementById('chat-icon123').style.display = 'none';
+  //   document.querySelector('.switch').style.display="block"
+  document.querySelector('.tooltiptwo').addEventListener('click', function () {
+    overalloverlay.style.display = 'flex';
+    document.querySelector('.loading-container1').style.visibility = 'visible';
+    document.querySelector('.loading-text1').style.visibility = 'visible';
+    document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`);
+    document.getElementById('iframe-expoDir').onload = function () {
+      // Hide the loading animation once the iframe is loaded
+      document.querySelector('.loading-container1').style.visibility = 'hidden';
+      document.querySelector('.loading-text1').style.visibility = 'hidden';
+    };
+  });
+} else {
+  document.getElementById('stick').style.display = 'none';
+  //  document.querySelector('.switch').style.display="none"
+  document.querySelector('.tooltiptwo').addEventListener('click', function () {
+    overalloverlay.style.display = 'flex';
+    document.querySelector('.loading-container1').style.visibility = 'visible';
+    document.querySelector('.loading-text1').style.visibility = 'visible';
+
+    document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectory.cfm`);
+    document.getElementById('iframe-expoDir').onload = function () {
+      // Hide the loading animation once the iframe is loaded
+      document.querySelector('.loading-container1').style.visibility = 'hidden';
+      document.querySelector('.loading-text1').style.visibility = 'hidden';
+    };
+  });
+}
+</script>
 </html>

@@ -235,8 +235,8 @@ const fetchDataFromAPI = () => {
                             imageElement.setAttribute("height", height);
                            imageElement.setAttribute("src", imageUrl); 
                             imageElement.setAttribute("rotation", "0 90 0");
-                            var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
-                            if (videoUrl) {
+                            // var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
+                            if (stall.products[imageIndex].product_youtube_link != "") {
                                 // If a video link exists, use the mouseenter event to show the video popup
                                 imageElement.addEventListener('click', function () {
                                 
@@ -253,7 +253,7 @@ const fetchDataFromAPI = () => {
                                     // Retrieve the dynamic video URL and update the Video.js player
                                     // var videoUrl = stall.products[imageIndex].videoUrl;
                                     var player = videojs('youtubePlayer');
-                                    player.src({ type: 'video/youtube', src: videoUrl });
+                                    player.src({ type: 'video/youtube', src: stall.products[imageIndex].product_youtube_link });
                                     player.play();
 
                                   

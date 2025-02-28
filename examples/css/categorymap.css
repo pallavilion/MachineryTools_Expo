@@ -23,8 +23,8 @@ h6 {
   flex-direction: column;
   cursor: pointer;
   position: absolute;
-      top: 25px;
-    right: 67px;
+  top: 25px;
+  right: 67px;
   align-items: center;
 }
 .drop-business-card-category-image {
@@ -236,6 +236,17 @@ p.categoryName {
   .vendorsAndhallCount {
     display: flex;
     flex-direction: unset;
+  }
+  .drop-business-card-category-image {
+    position: fixed;
+    bottom: 20px;
+    z-index: 999;
+    right: 20px;
+    border: 4px solid #164fb1;
+    border-radius: 50%;
+  }
+  .mbl_none {
+    display: none;
   }
   .vendorsAndhallCount {
     padding-left: 0;

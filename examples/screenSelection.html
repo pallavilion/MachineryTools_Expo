@@ -28,7 +28,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-      background: #e7f0ff;
+        background: #e7f0ff;
       }
 
       /* Main container styling with a frosted glass effect */
@@ -76,7 +76,7 @@
       }
 
       /* Hide the default radio button */
-      .card input[type='radio'] {
+      .card input[type="radio"] {
         display: none;
       }
 
@@ -100,8 +100,8 @@
       }
 
       /* Highlight the selected card with a border */
-      .card input[type='radio']:checked + .card-content {
-        border: 2px solid #ff9800;
+      .card input[type="radio"]:checked + .card-content {
+        border: 2px solid #0280bf;
       }
 
       /* Next button styling */
@@ -109,15 +109,11 @@
         padding: 12px 30px;
         font-size: 1rem;
         color: #fff;
-        background: #ff9800;
+        background: #0280bf;
         border: none;
         border-radius: 8px;
         cursor: pointer;
         transition: background 0.3s ease;
-      }
-
-      .next-btn:hover {
-        background: #e68900;
       }
 
       /* Responsive adjustments */
@@ -153,38 +149,51 @@
       <button class="next-btn" onclick="handleNext()">Next</button>
     </div>
 
+   <script src="js/track js/ua-parser.js"></script>
     <script>
       let autoRedirectTimer;
 
-      // Randomly select a screen mode on page load
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        // Parse the user agent
+        var parser = new UAParser();
+        var result = parser.getResult();
+        var deviceType = result.device.type; // will be "mobile" on mobile devices
+
+        // If not mobile, remove the 2D card so only 3D is available.
+        if (deviceType !== "mobile") {
+          const cardsContainer = document.querySelector(".cards-container");
+          const firstCard = cardsContainer.querySelector("label.card:first-child");
+          if (firstCard) {
+            firstCard.remove();
+          }
+        }
+
+        // Randomly select one of the available options.
         const options = document.querySelectorAll('input[name="screen"]');
         const randomIndex = Math.floor(Math.random() * options.length);
         options[randomIndex].checked = true;
 
-        // Set auto-redirect timer for 10 seconds
-        autoRedirectTimer = setTimeout(handleNext, 100000000);
+        // Auto-redirect after 10 seconds.
+        autoRedirectTimer = setTimeout(handleNext, 10000);
       });
 
       function handleNext() {
-        // Clear the auto-redirect timer if user interacts manually
         clearTimeout(autoRedirectTimer);
 
-        // Retrieve the selected option
         const selected = document.querySelector('input[name="screen"]:checked');
         if (!selected) {
-          alert('Please select a screen mode.');
+          alert("Please select a screen mode.");
           return;
         }
 
-        // Save selection in local storage
-        localStorage.setItem('screenSelection', selected.value);
+        // Save the selection to local storage.
+        localStorage.setItem("screenSelection", selected.value);
 
-        // Redirect based on the selected option
-        if (selected.value === '2D') {
-          window.location.href = 'categorymapdynmic.html'; // Update with your actual 2D page URL
-        } else if (selected.value === '3D') {
-          window.location.href = 'categorymapdynmic.html'; // Update with your actual 3D page URL
+        // Redirect based on the selected option.
+        if (selected.value === "2D") {
+          window.location.href = "categorymapdynmic.html"; // Update with your actual 2D page URL.
+        } else if (selected.value === "3D") {
+          window.location.href = "categorymapdynmic.html"; // Update with your actual 3D page URL.
         }
       }
     </script>

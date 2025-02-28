@@ -3,7 +3,7 @@
   try {
     if (typeof document != "undefined") {
       var elementStyle = document.createElement("style");
-      elementStyle.appendChild(document.createTextNode(".modal {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.card-container {\r\n  background: #fff;\r\n  padding:20px;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\r\n  max-width: 500px;\r\n  width: 90%;\r\n  margin: 0 10px;\r\n}\r\n.form-box{\r\n  display: flex;\r\n  gap: 20px;\r\n  justify-content: space-between;\r\n}\r\n\r\n.close-btn {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 15px;\r\n  font-size: 24px;\r\n  cursor: pointer;\r\n  color: red;\r\n}\r\n\r\n.input-toggle {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.form-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  text-align: left;\r\n  margin-bottom: 15px;\r\n  padding: 0 10px;\r\n}\r\n.form-group1 {\r\n\r\n  text-align: left;\r\n  margin-bottom: 15px;\r\n  padding: 0 10px;\r\n}\r\n.form-group1 input,\r\n.form-group1 textarea {\r\n  width: 100%;\r\n  padding: 8px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 5px;\r\n}\r\n.form-group input,\r\n.form-group textarea {\r\n  width: 100%;\r\n  padding: 8px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 5px;\r\n}\r\n\r\ntextarea {\r\n  resize: vertical;\r\n  overflow: hidden;\r\n}\r\n\r\n.upload-section {\r\n  text-align: center;\r\n  margin-top: 15px;\r\n}\r\n\r\n.drop-area {\r\n  border: 2px dashed #007bff;\r\n  padding: 20px;\r\n  text-align: center;\r\n  border-radius: 10px;\r\n  cursor: pointer;\r\n  background: #f8f9fa;\r\n  transition: background 0.3s;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.drop-area:hover {\r\n  background: #e9ecef;\r\n}\r\n\r\n.upload-icon {\r\n  font-size: 40px;\r\n  color: #007bff;\r\n}\r\n\r\n.drop-area p {\r\n  font-size: 14px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.camera-btn {\r\n  background: #28a745;\r\n  color: #fff;\r\n  border: none;\r\n  padding: 10px 15px;\r\n  cursor: pointer;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  gap: 5px;\r\n  border-radius: 5px;\r\n  width: 100%;\r\n  font-size: 16px;\r\n}\r\n\r\n.camera-btn:disabled {\r\n  background: #ccc;\r\n  cursor: not-allowed;\r\n}\r\n.camera-section {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin-top: 20px;\r\n}\r\n.capture-btn {\r\n  background: red;\r\n  color: #fff;\r\n  padding: 10px;\r\n  border: none;\r\n  margin-top: 10px;\r\n  cursor: pointer;\r\n  border-radius: 5px;\r\n  font-size: 16px;\r\n}\r\n\r\n.image-container {\r\n  position: relative;\r\n  display: inline-block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.preview-image {\r\n  width: 250px;\r\n  height: 200px;\r\n  object-fit: cover;\r\n  border-radius: 10px;\r\n  border: 2px solid #007bff;\r\n  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.close-preview-image {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n  background: rgba(255, 255, 255, 0.7);\r\n  border: none;\r\n  border-radius: 50%;\r\n  font-size: 20px;\r\n  padding: 2px 6px;\r\n  cursor: pointer;\r\n  color: #333;\r\n}\r\n\r\n.categoriesBusinessCard {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 8px;\r\n  text-align: left;\r\n  margin: 15px 0;\r\n  overflow-y: scroll;\r\n  height: 100%;\r\n  max-height: 206px;\r\n  border: 1px solid black;\r\n  border-radius: 3px;\r\n  padding: 5px;\r\n}\r\n\r\n.category-label {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  font-size: 14px;\r\n}\r\n\r\n.save-btn {\r\n  background: green;\r\n  color: #fff;\r\n  padding: 10px;\r\n  border: none;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  border-radius: 5px;\r\n  margin-top: 10px;\r\n  font-size: 18px;\r\n}\r\n\r\n.error {\r\n  color: red;\r\n  font-size: 14px;\r\n  margin-top: 5px;\r\n  display: block;\r\n}\r\n\r\n/* Responsive styles */\r\n@media (max-width: 600px) {\r\n  .card-container {\r\n    padding: 15px;\r\n  }\r\n  .preview-image {\r\n    width: 150px;\r\n    height: 150px;\r\n  }\r\n  .categoriesBusinessCard {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n  .save-btn {\r\n    font-size: 16px;\r\n  }\r\n  .close-preview-image {\r\n    top: 5px;\r\n    right: 5px;\r\n    font-size: 18px;\r\n    padding: 2px 4px;\r\n  }\r\n}"));
+      elementStyle.appendChild(document.createTextNode('body {\r\n  font-family: "Nunito", serif;\r\n}\r\n\r\n.category_selection {\r\n  border-bottom: 2px solid #164fb1;\r\n  display: inline;\r\n  padding-bottom: 2px;\r\n  margin-top: 40px;\r\n}\r\n\r\n.modalBusinessCard {\r\n  display: flex;\r\n  justify-content: center;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.7);\r\n}\r\n\r\n.upload-sectionBc {\r\n  max-width: 400px;\r\n  margin: auto;\r\n  position: relative;\r\n}\r\n\r\n.upload-sectionBc::before {\r\n  position: absolute;\r\n  content: "or";\r\n  display: flex;\r\n  align-items: center;\r\n  background: #fff;\r\n  z-index: 99;\r\n}\r\n\r\n.no_card_text {\r\n  font-family: "Poppins", serif;\r\n  text-decoration: underline;\r\n  font-size: 18px;\r\n  cursor: pointer;\r\n}\r\n\r\n.upload-sectionBc::before {\r\n  position: absolute;\r\n  content: "or";\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.upload-sectionBc::after {\r\n  position: absolute;\r\n  content: "";\r\n  height: 54%;\r\n  width: 1px;\r\n  background-color: #D1D1D1;\r\n}\r\n\r\n.card-containerBc {\r\n  background: #fff;\r\n  padding: 20px;\r\n  border-radius: 10px;\r\n  text-align: center;\r\n  position: relative;\r\n  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);\r\n  max-width: 790px;\r\n  width: 90%;\r\n  margin: 20px 10px;\r\n  max-height: 90%;\r\n  height: fit-content;\r\n  overflow-y: scroll;\r\n  padding-top: 35px;\r\n  scrollbar-width: thin;\r\n}\r\n\r\n.form-boxBc {\r\n  display: flex;\r\n  gap: 20px !important;\r\n}\r\n\r\n.form-boxBc label {\r\n  font-family: "Poppins", serif;\r\n  font-size: 13px;\r\n}\r\n\r\n.form-group1Bc input,\r\n.form-groupBc input {\r\n  border: 1px solid #D4D4D4;\r\n  border-radius: 3px;\r\n  padding: 5px 7px;\r\n  margin-bottom: 5px;\r\n  color: #242731;\r\n  font-family: "Poppins", serif;\r\n}\r\n\r\n.categoriesBusinessCardBc label {\r\n  position: relative;\r\n}\r\n\r\n.categoriesBusinessCardBc label::before {\r\n  position: absolute;\r\n  content: "";\r\n  height: 20px;\r\n  width: 20px;\r\n  border: 2px solid #B3BABD;\r\n  border-radius: 50%;\r\n}\r\n\r\n.categoriesBusinessCardBc label.active::before {\r\n  background-color: #0280BF;\r\n}\r\n\r\nlabel.active {\r\n  background: #E3F6FF;\r\n}\r\n\r\n.categoriesBusinessCardBc input[type="checkbox"] {\r\n  position: relative;\r\n  opacity: 0;\r\n}\r\n\r\n.categoriesBusinessCardBc label {\r\n  font-family: "Inter", serif !important;\r\n  padding: 10px;\r\n  border: 1px solid #0280BF;\r\n  border-radius: 30px;\r\n}\r\n\r\n.upload-sectionBc p {\r\n  font-family: "Inter", serif;\r\n}\r\n\r\n.save-btnBc {\r\n  max-width: 480px;\r\n}\r\n\r\n.form-boxBc {\r\n  display: flex;\r\n  gap: 20px;\r\n  justify-content: space-between;\r\n}\r\n\r\n.form-boxBc,\r\n.form-groupBc {\r\n  max-width: 70%;\r\n  margin: auto;\r\n}\r\n\r\n.close-btnBc {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 15px;\r\n  font-size: 24px;\r\n  cursor: pointer;\r\n  color: red;\r\n}\r\n\r\n.input-toggleBc {\r\n  display: flex;\r\n  justify-content: space-evenly;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.form-groupBc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  text-align: left;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.form-group1Bc {\r\n  text-align: left;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.business_card {\r\n  border-bottom: 2px solid #164FB1;\r\n  padding-bottom: 5px;\r\n  font-size: 22px;\r\n  font-family: "Poppins", serif;\r\n  font-weight: 600;\r\n  display: flex;\r\n  justify-content: center;\r\n  max-width: 200px;\r\n  margin: auto;\r\n}\r\n\r\n.form-group1Bc input,\r\n.form-group1Bc textarea {\r\n  /* width: 100%; */\r\n  padding: 8px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 5px;\r\n}\r\n\r\n.form-group1Bc {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.upload-sectionBc,\r\n.form-boxBc {\r\n  margin-top: 50px !important;\r\n}\r\n\r\n.form-groupBc input,\r\n.descriptionBc {\r\n  padding: 8px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 5px;\r\n}\r\n\r\n.descriptionBc {\r\n  resize: vertical;\r\n  overflow: hidden;\r\n}\r\n\r\n.upload-sectionBc {\r\n  display: flex;\r\n  text-align: center;\r\n  margin-top: 15px;\r\n  border: 2px dashed #818181;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n  border-radius: 8px;\r\n}\r\n\r\n.drop-areaBc {\r\n  padding: 20px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  transition: background 0.3s;\r\n}\r\n\r\n\r\n\r\n.upload-iconBc {\r\n  font-size: 40px;\r\n  color: #007bff;\r\n}\r\n\r\n.camera-icon {\r\n  font-size: 40px;\r\n  color: #007bff;\r\n}\r\n\r\n.drop-areaBc p {\r\n  font-size: 14px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.camera-btnBc p {\r\n  font-size: 14px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.camera-btnBc {\r\n  padding: 20px;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  transition: background 0.3s;\r\n  background: none;\r\n  border: none;\r\n}\r\n\r\n.camera-btnBc:disabled {\r\n  cursor: not-allowed;\r\n}\r\n\r\n.camera-sectionBc {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin-top: 20px;\r\n}\r\n\r\n.capture-btnBc {\r\n  background: #164fb1;\r\n  color: #fff;\r\n  padding: 10px;\r\n  border: none;\r\n  margin-top: 10px;\r\n  cursor: pointer;\r\n  border-radius: 5px;\r\n  font-size: 16px;\r\n}\r\n\r\n.image-containerBc {\r\n  position: relative;\r\n  display: inline-block;\r\n  margin-top: 10px;\r\n}\r\n\r\n.preview-imageBc {\r\n\r\n  height: 200px;\r\n  object-fit: contain;\r\n  border-radius: 10px;\r\n  border: 2px solid #007bff;\r\n  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.close-preview-imageBc {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n  background: rgba(255, 255, 255, 0.7);\r\n  border: none;\r\n  border-radius: 50%;\r\n  font-size: 20px;\r\n  padding: 2px 6px;\r\n  cursor: pointer;\r\n  color: #333;\r\n}\r\n\r\n.categoriesBusinessCardBc {\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  text-align: left;\r\n  margin: 15px 0;\r\n  overflow-y: scroll;\r\n  scrollbar-width: thin;\r\n  height: 100%;\r\n  max-height: 206px;\r\n  border-radius: 3px;\r\n  padding: 5px;\r\n  gap: 20px;\r\n  width: 80%;\r\n  margin: 20px auto 20px auto;\r\n}\r\n\r\n.category-labelBc {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 5px;\r\n  font-size: 14px;\r\n}\r\n\r\n.save-btnBc {\r\n  background: #164fb1;\r\n  color: #fff;\r\n  padding: 10px;\r\n  border: none;\r\n  width: 100%;\r\n  cursor: pointer;\r\n  border-radius: 5px;\r\n  margin-top: 10px;\r\n  font-size: 18px;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.errorBc {\r\n  color: red;\r\n  font-size: 14px;\r\n  margin-top: 5px;\r\n  display: block;\r\n}\r\n\r\n@media only screen and (max-width:992px) {\r\n\r\n  .form-boxBc,\r\n  .form-groupBc,\r\n  .form-group1Bc {\r\n    max-width: 100%;\r\n    margin: auto;\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n/* Responsive styles */\r\n@media (max-width: 600px) {\r\n  .card-containerBc {\r\n    padding: 15px;\r\n  }\r\n\r\n  .preview-imageBc {\r\n    width: 150px;\r\n    height: 150px;\r\n  }\r\n\r\n  .categoriesBusinessCardBc {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .save-btnBc {\r\n    font-size: 16px;\r\n  }\r\n\r\n  .close-preview-imageBc {\r\n    top: 5px;\r\n    right: 5px;\r\n    font-size: 18px;\r\n    padding: 2px 4px;\r\n  }\r\n\r\n  .form-boxBc {\r\n    flex-direction: column;\r\n    gap: 0 !important;\r\n  }\r\n\r\n  .categoriesBusinessCardBc {\r\n    width: 100%;\r\n  }\r\n}'));
       document.head.appendChild(elementStyle);
     }
   } catch (e) {
@@ -460,7 +460,6 @@
     return react.exports;
   }
   var reactExports = requireReact();
-  const React = /* @__PURE__ */ getDefaultExportFromCjs(reactExports);
   var client = { exports: {} };
   var reactDomClient_production = {};
   var scheduler = { exports: {} };
@@ -762,7 +761,7 @@
   function requireReactDom_production() {
     if (hasRequiredReactDom_production) return reactDom_production;
     hasRequiredReactDom_production = 1;
-    var React2 = requireReact();
+    var React = requireReact();
     function formatProdErrorMessage(code) {
       var url = "https://react.dev/errors/" + code;
       if (1 < arguments.length) {
@@ -801,7 +800,7 @@
         implementation
       };
     }
-    var ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+    var ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
     function getCrossOriginStringAs(as, input) {
       if ("font" === as) return "";
       if ("string" === typeof input)
@@ -938,7 +937,7 @@
   function requireReactDomClient_production() {
     if (hasRequiredReactDomClient_production) return reactDomClient_production;
     hasRequiredReactDomClient_production = 1;
-    var Scheduler = requireScheduler(), React2 = requireReact(), ReactDOM2 = requireReactDom();
+    var Scheduler = requireScheduler(), React = requireReact(), ReactDOM2 = requireReactDom();
     function formatProdErrorMessage(code) {
       var url = "https://react.dev/errors/" + code;
       if (1 < arguments.length) {
@@ -1002,7 +1001,7 @@
         }
       return null;
     }
-    var ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, assign = Object.assign, prefix, suffix;
+    var ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, assign = Object.assign, prefix, suffix;
     function describeBuiltInComponentFrame(name) {
       if (void 0 === prefix)
         try {
@@ -11747,7 +11746,7 @@
         0 === i && attemptExplicitHydrationTarget(target);
       }
     };
-    var isomorphicReactPackageVersion$jscomp$inline_1686 = React2.version;
+    var isomorphicReactPackageVersion$jscomp$inline_1686 = React.version;
     if ("19.0.0" !== isomorphicReactPackageVersion$jscomp$inline_1686)
       throw Error(
         formatProdErrorMessage(
@@ -11867,143 +11866,9 @@
   }
   var clientExports = requireClient();
   const ReactDOM = /* @__PURE__ */ getDefaultExportFromCjs(clientExports);
-  var DefaultContext = {
-    color: void 0,
-    size: void 0,
-    className: void 0,
-    style: void 0,
-    attr: void 0
-  };
-  var IconContext = React.createContext && /* @__PURE__ */ React.createContext(DefaultContext);
-  var _excluded = ["attr", "size", "title"];
-  function _objectWithoutProperties(source, excluded) {
-    if (source == null) return {};
-    var target = _objectWithoutPropertiesLoose(source, excluded);
-    var key, i;
-    if (Object.getOwnPropertySymbols) {
-      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-      for (i = 0; i < sourceSymbolKeys.length; i++) {
-        key = sourceSymbolKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-        target[key] = source[key];
-      }
-    }
-    return target;
-  }
-  function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-      }
-    }
-    return target;
-  }
-  function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-      return target;
-    };
-    return _extends.apply(this, arguments);
-  }
-  function ownKeys(e, r) {
-    var t = Object.keys(e);
-    if (Object.getOwnPropertySymbols) {
-      var o = Object.getOwnPropertySymbols(e);
-      r && (o = o.filter(function(r2) {
-        return Object.getOwnPropertyDescriptor(e, r2).enumerable;
-      })), t.push.apply(t, o);
-    }
-    return t;
-  }
-  function _objectSpread(e) {
-    for (var r = 1; r < arguments.length; r++) {
-      var t = null != arguments[r] ? arguments[r] : {};
-      r % 2 ? ownKeys(Object(t), true).forEach(function(r2) {
-        _defineProperty(e, r2, t[r2]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
-        Object.defineProperty(e, r2, Object.getOwnPropertyDescriptor(t, r2));
-      });
-    }
-    return e;
-  }
-  function _defineProperty(obj, key, value) {
-    key = _toPropertyKey(key);
-    if (key in obj) {
-      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-    } else {
-      obj[key] = value;
-    }
-    return obj;
-  }
-  function _toPropertyKey(t) {
-    var i = _toPrimitive(t, "string");
-    return "symbol" == typeof i ? i : i + "";
-  }
-  function _toPrimitive(t, r) {
-    if ("object" != typeof t || !t) return t;
-    var e = t[Symbol.toPrimitive];
-    if (void 0 !== e) {
-      var i = e.call(t, r);
-      if ("object" != typeof i) return i;
-      throw new TypeError("@@toPrimitive must return a primitive value.");
-    }
-    return ("string" === r ? String : Number)(t);
-  }
-  function Tree2Element(tree) {
-    return tree && tree.map((node, i) => /* @__PURE__ */ React.createElement(node.tag, _objectSpread({
-      key: i
-    }, node.attr), Tree2Element(node.child)));
-  }
-  function GenIcon(data) {
-    return (props) => /* @__PURE__ */ React.createElement(IconBase, _extends({
-      attr: _objectSpread({}, data.attr)
-    }, props), Tree2Element(data.child));
-  }
-  function IconBase(props) {
-    var elem = (conf) => {
-      var {
-        attr,
-        size,
-        title
-      } = props, svgProps = _objectWithoutProperties(props, _excluded);
-      var computedSize = size || conf.size || "1em";
-      var className;
-      if (conf.className) className = conf.className;
-      if (props.className) className = (className ? className + " " : "") + props.className;
-      return /* @__PURE__ */ React.createElement("svg", _extends({
-        stroke: "currentColor",
-        fill: "currentColor",
-        strokeWidth: "0"
-      }, conf.attr, attr, svgProps, {
-        className,
-        style: _objectSpread(_objectSpread({
-          color: props.color || conf.color
-        }, conf.style), props.style),
-        height: computedSize,
-        width: computedSize,
-        xmlns: "http://www.w3.org/2000/svg"
-      }), title && /* @__PURE__ */ React.createElement("title", null, title), props.children);
-    };
-    return IconContext !== void 0 ? /* @__PURE__ */ React.createElement(IconContext.Consumer, null, (conf) => elem(conf)) : elem(DefaultContext);
-  }
-  function FaCamera(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z" }, "child": [] }] })(props);
-  }
-  function FaUpload(props) {
-    return GenIcon({ "attr": { "viewBox": "0 0 512 512" }, "child": [{ "tag": "path", "attr": { "d": "M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" }, "child": [] }] })(props);
-  }
   const apiurl = "https://expochatapis.marketcentral.in";
+  const uploadIconBc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAwCAYAAAC4wJK5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAWdSURBVHgB1VrPbxRVHP++2ekPoNY1IcqhrW1SE1IwLAmHGjxUTSR6aZtgiCeLHPTWNnov/QNI69EYAU9q2qTlIpFE2YMNPWhcUiBESbrp7qEaEtpSCqXbfXw/b/cts9v58WZ2W5ZPsnkzO2/efD/fn++9GUE1Quah7MsLSsRidExKSgiiuCTqLHWQtEKC0nyUzku6aeUp2f6KSFINIKgKQHBh02cyTwM8UpzCgomxALN8/w/VEIpEAsKTTWMsRB/VCAIWytN4R4u4TCERikT2gUzIZpqopfC0U6D01ia91/WaSJveY5l2zGzIYdlEf+8mAQBxZDfRYuaxHDO9J9ASiw9k3G6mmd0W3gOzuU06y1ZZ8evkS4IJdDY00fWyLLPHMHEvTxL1QEAjiIhnTLBfztQDAaAYJzNwbbfrriSWNuQENwmqLyRiTeQa7DvcaWldDgmLLlEVWNvM0e3/1unav/fVMdDaZFPPGy30Tnuc2l5tpqjg2cBgxwEx6/yvjES1cQCBv/8zSxf5p4V3Qy8TufDx4ahkVjhjdTkzVhmJ7CN5SQoaogjIrj6hMz+lVKsF7Xm9hY7wD1h9mqM7FdYZOdlJo/wLC557jb95QJynShKwAooMRYCTALR74aPD1NsR9+w7fWuZJubS6jwikTJrlAK7oZGMK2QlNAFo/urQCU8CAEhCcBAFJpnM/NIKhUTcaqQRffI8O4loFRla1Rb4bvCoCmATnH77kCIDaKuEgSVoWKdcRWJpTQ6EDeYbrL3x3+6VuUXYQD13ok2Rns+s0J3/1ykk4rZdKANKbVaM+qXhnRD+66t3SwGsgdQZFiDw4VsHlTUxbk8xCZiCF2ED3CQLtjd0JWh9sqh5CHD66CGVfZD/o+Z+fZ9fSvZCzKJ+bkZs+JWJK0FbmsDY+930ObtCLYHxEeBICp+wckyUArkhv6X9yg9wnYmIBG4H+Lq2AJ6B2ICiTn47bx7sDTyv4uLWGbSowOB4CApYGAJf/XJXaRhuhwrtBijlVPdBdQxCv3Ix1FZfe5KjsQ+6fZ8R4zmVEYmphWXVIi2GJQDo1ouIs64g0JG1zvyYoot/ZekUn/vVHWlxzSADaJMfMcweTgIaOMf/JkCW0hYPdCsZkoRJIdMEdPoE0OI8DJFzRRIm9cNSm1oB0Pn7Rsa/6/jv90oEfv40UboPLc7DENEKM0m9XL2DSWifnF5Y9u2HFFlJQMNJxES7upgGWV9IStvsT6mgao28PflHWmUp+KjXrBNC+j0YROa+7CUTTBVjSrukF0DC2tpS+6O+gFA6syD1eQUb+gVpzqTPlKOwBk3TczlK2ZiTZzdkOqhqQyMYUE894Ntq4YMpR2uzSoVRoGrDP/cLx7xwusbH88XYGw2YVGIXBPIrlWzn6Ypl0XDQAzFTReHS64fpVTb5rcK1heF3jafhTkApWM46gXFAILCwCkqiKcxiJWHhHUgCgGbmvuhVwYlshSUn6kcUAgDiDZVZA5bFfybjcShcIU1C+ZWl3h8Yz6cRpGGnzl7jeFVyPyhXai3seqhiB7/KE31DLxOKrgSUKnb+KU2aFL56wRbXVn1cIrEb1mgvZpZqNsvcIARd7tr3fF+2cvMsbjfytk2UV1d7BLW5LHhz2UGibAIIa8htOkt1DLwScxIAdsxiOxDx+ToNcpbL7Z2e63qo6FbX+Wo97Yyn2veL424XXNcTcKucRYPwP6oDQI6coEGf695YfMy75LIOXndVBHIlfFd2uJFfM8GEs/RikNzaR8f9CADG77Ezj+R57h150zksWLDRtv1i0rCvOfbIvZIizwRaRMr0hkifReCVGE/dx2pMJknbNB7lG4+qP1DhfZ8hHqQ/8gcqFs3K3Av4QMUN6lMhi/p45+EYC9dJsJKDGLKMLAid2t6mm7yGSdXqU6FnvK2MXFi77pwAAAAASUVORK5CYII=";
+  const cameraIconBc = "data:image/png;base64,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";
   var jsxRuntime = { exports: {} };
   var reactJsxRuntime_production = {};
   /**
@@ -12079,7 +11944,7 @@
     const [selectedCategories, setSelectedCategories] = reactExports.useState([]);
     const [retrivedData, setRetrivedData] = reactExports.useState(null);
     const [selectedImage, setSelectedImage] = reactExports.useState(null);
-    const [inputType, setInputType] = reactExports.useState("text");
+    const [inputType, setInputType] = reactExports.useState("business-card");
     const [categoryItems, setCategoryItems] = reactExports.useState([]);
     const [defaultCategoriesSelected, setDefaultCategoriesSelected] = reactExports.useState(false);
     const [loadingCategories, setLoadingCategories] = reactExports.useState(true);
@@ -12231,7 +12096,9 @@
         setIsCameraActive(true);
         setIsCameraCaptured(false);
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: true
+          video: {
+            facingMode: "environment"
+          }
         });
         if (videoRef.current) videoRef.current.srcObject = stream;
       } catch (err) {
@@ -12311,18 +12178,6 @@
         return data;
       }
     };
-    const handleInputTypeChange = (type) => {
-      if (type === "text") {
-        if (isCameraActive && videoRef.current && videoRef.current.srcObject) {
-          const stream = videoRef.current.srcObject;
-          const tracks = stream.getTracks();
-          tracks.forEach((track) => track.stop());
-        }
-        setIsCameraActive(false);
-      }
-      setInputType(type);
-      setErrors({});
-    };
     const handleSave = async () => {
       let valid = true;
       const newErrors = {
@@ -12396,39 +12251,21 @@
       onClose();
     }
     return /* @__PURE__ */ jsx("div", {
-      className: "modal",
+      className: "modalBusinessCard",
       children: /* @__PURE__ */ jsxs("div", {
-        className: "card-container",
+        className: "card-containerBc",
         children: [/* @__PURE__ */ jsx("span", {
-          className: "close-btn",
+          className: "close-btnBc",
           onClick: handleClose,
           children: "×"
         }), /* @__PURE__ */ jsx("h2", {
+          class: "business_card",
           children: "Business Card"
-        }), /* @__PURE__ */ jsxs("div", {
-          className: "input-toggle",
-          children: [/* @__PURE__ */ jsxs("label", {
-            children: [/* @__PURE__ */ jsx("input", {
-              type: "radio",
-              name: "inputType",
-              value: "text",
-              checked: inputType === "text",
-              onChange: () => handleInputTypeChange("text")
-            }), "Text"]
-          }), /* @__PURE__ */ jsxs("label", {
-            children: [/* @__PURE__ */ jsx("input", {
-              type: "radio",
-              name: "inputType",
-              value: "business-card",
-              checked: inputType === "business-card",
-              onChange: () => handleInputTypeChange("business-card")
-            }), "Drop Business Card"]
-          })]
         }), inputType === "text" && /* @__PURE__ */ jsxs(Fragment, {
           children: [/* @__PURE__ */ jsxs("div", {
-            className: "form-box",
+            className: "form-boxBc",
             children: [/* @__PURE__ */ jsxs("div", {
-              className: "form-group1",
+              className: "form-group1Bc",
               children: [/* @__PURE__ */ jsx("label", {
                 children: "Name"
               }), /* @__PURE__ */ jsx("input", {
@@ -12438,11 +12275,11 @@
                 value: formData.name,
                 onChange: handleChange
               }), errors.name && /* @__PURE__ */ jsx("span", {
-                className: "error",
+                className: "errorBc",
                 children: errors.name
               })]
             }), /* @__PURE__ */ jsxs("div", {
-              className: "form-group1",
+              className: "form-group1Bc",
               children: [/* @__PURE__ */ jsx("label", {
                 children: "Phone Number"
               }), /* @__PURE__ */ jsx("input", {
@@ -12452,12 +12289,12 @@
                 value: formData.phone,
                 onChange: handleChange
               }), errors.phone && /* @__PURE__ */ jsx("span", {
-                className: "error",
+                className: "errorBc",
                 children: errors.phone
               })]
             })]
           }), /* @__PURE__ */ jsxs("div", {
-            className: "form-group",
+            className: "form-groupBc",
             children: [/* @__PURE__ */ jsx("label", {
               children: "Email"
             }), /* @__PURE__ */ jsx("input", {
@@ -12467,32 +12304,33 @@
               value: formData.email,
               onChange: handleChange
             }), errors.email && /* @__PURE__ */ jsx("span", {
-              className: "error",
+              className: "errorBc",
               children: errors.email
             })]
           }), /* @__PURE__ */ jsxs("div", {
-            className: "form-group",
+            className: "form-groupBc",
             children: [/* @__PURE__ */ jsx("label", {
               children: "Description"
             }), /* @__PURE__ */ jsx("textarea", {
-              className: "description",
+              className: "descriptionBc",
               name: "description",
               placeholder: "Enter Description...",
               value: formData.description,
               onChange: handleChange
             })]
           })]
-        }), inputType === "business-card" && /* @__PURE__ */ jsxs("div", {
-          className: "upload-section",
+        }), inputType === "business-card" && !isCameraActive && !selectedImage && /* @__PURE__ */ jsxs("div", {
+          className: "upload-sectionBc",
           children: [!isCameraActive && !selectedImage && /* @__PURE__ */ jsxs("div", {
-            className: "drop-area",
+            className: "drop-areaBc",
             onClick: handleFileClick,
             onDragOver: handleDragOver,
             onDrop: handleDrop,
-            children: [/* @__PURE__ */ jsx(FaUpload, {
-              className: "upload-icon"
+            children: [/* @__PURE__ */ jsx("img", {
+              src: uploadIconBc,
+              className: "upload-iconBc"
             }), /* @__PURE__ */ jsx("p", {
-              children: "Click or Drag & Drop your Business Card here"
+              children: "Gallery"
             }), /* @__PURE__ */ jsx("input", {
               type: "file",
               ref: fileInputRef,
@@ -12503,26 +12341,33 @@
               }
             })]
           }), /* @__PURE__ */ jsxs("button", {
-            className: "camera-btn",
+            type: "button",
+            className: "camera-btnBc",
             onClick: handleCameraCapture,
             disabled: isCameraActive || selectedImage,
-            children: [/* @__PURE__ */ jsx(FaCamera, {
+            children: [/* @__PURE__ */ jsx("img", {
+              src: cameraIconBc,
+              alt: "",
               className: "camera-icon"
-            }), " Use Camera"]
+            }), " ", /* @__PURE__ */ jsx("p", {
+              children: "Take Photo"
+            })]
           }), errors.image && /* @__PURE__ */ jsx("span", {
             className: "error",
             children: errors.image
           })]
         }), isCameraActive && /* @__PURE__ */ jsxs("div", {
-          className: "camera-section",
+          className: "camera-sectionBc",
           children: [/* @__PURE__ */ jsx("video", {
-            className: "preview-image",
+            style: {
+              width: "360px"
+            },
             ref: videoRef,
             autoPlay: true,
             playsInline: true,
             disablePictureInPicture: true
           }), /* @__PURE__ */ jsx("button", {
-            className: "capture-btn",
+            className: "capture-btnBc",
             onClick: captureImage,
             children: "Capture Image"
           }), /* @__PURE__ */ jsx("canvas", {
@@ -12532,39 +12377,49 @@
             }
           })]
         }), inputType === "business-card" && selectedImage && /* @__PURE__ */ jsxs("div", {
-          className: "image-container",
+          className: "image-containerBc",
           children: [/* @__PURE__ */ jsx("img", {
             src: selectedImage,
             alt: "Selected",
-            className: "preview-image"
+            className: "preview-imageBc"
           }), /* @__PURE__ */ jsx("button", {
             onClick: () => setSelectedImage(""),
-            className: "close-preview-image",
+            className: "close-preview-imageBc",
             children: "x"
           })]
+        }), /* @__PURE__ */ jsx("div", {
+          onClick: () => setInputType((prev) => prev === "text" ? "business-card" : "text"),
+          children: /* @__PURE__ */ jsxs("p", {
+            class: "no_card_text",
+            children: [inputType === "text" ? "upload business card ?" : " Don't have a business card ?", " "]
+          })
         }), showcategory && /* @__PURE__ */ jsxs(Fragment, {
           children: [/* @__PURE__ */ jsx("h3", {
+            class: "category_selection",
             children: "Select Categories"
           }), loadingCategories ? /* @__PURE__ */ jsx("p", {
             children: "Loading categories..."
           }) : /* @__PURE__ */ jsx("div", {
-            className: "categoriesBusinessCard",
-            children: categoryItems.map((category, index) => /* @__PURE__ */ jsxs("label", {
-              className: "category-label",
-              children: [/* @__PURE__ */ jsx("input", {
-                type: "checkbox",
-                checked: selectedCategories && (selectedCategories == null ? void 0 : selectedCategories.includes(category.CATEGORY_ID)) || false,
-                onChange: () => handleCategoryChange(category.CATEGORY_ID)
-              }), category.CATEGORY]
-            }, index))
+            class: "single_category",
+            children: /* @__PURE__ */ jsx("div", {
+              className: "categoriesBusinessCardBc",
+              children: categoryItems.map((category, index) => /* @__PURE__ */ jsxs("label", {
+                className: `category-labelBc ${(selectedCategories == null ? void 0 : selectedCategories.includes(category.CATEGORY_ID)) ? "active" : ""}`,
+                children: [/* @__PURE__ */ jsx("input", {
+                  type: "checkbox",
+                  checked: selectedCategories && (selectedCategories == null ? void 0 : selectedCategories.includes(category.CATEGORY_ID)) || false,
+                  onChange: () => handleCategoryChange(category.CATEGORY_ID)
+                }), category.CATEGORY]
+              }, index))
+            })
           }), errors.category && /* @__PURE__ */ jsx("span", {
-            className: "error",
+            className: "errorBc",
             children: errors.category
           })]
         }), /* @__PURE__ */ jsx("button", {
-          className: "save-btn",
+          className: "save-btnBc",
           onClick: handleSave,
-          children: "Submit"
+          children: "Drop business card"
         })]
       })
     });

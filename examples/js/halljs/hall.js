@@ -26,6 +26,7 @@ const translations = {
     chattext: 'লক্ষ্য করুন: চ্যাট করার জন্য এখানে ক্লিক করুন'
   },
   telugu: {
+    
     urlText: 'ఉత్పత్తి లింక్',
     inviteText: 'ఉత్పత్తి లింక్ భాగస్వామ్యం చేయండి',
     chattext: 'గమనిక: చాట్ చేయడానికి ఇక్కడ నొక్కండి'
@@ -73,7 +74,7 @@ if (categoryparam.includes('||')) {
   // Replace '||' with another string
   categoryparam = categoryparam.replace(/\|\|/g, '&');
 }
-document.title = `Diwali Dry Fruits Mela – Buy Almonds, Apricots, Raisins & Cashews Online`;
+document.title = `Explore India's Finest Machine Tools businesses at the Expo Hall`;
 
 //console.log(`the categoryparam is ${categoryparam}`)
 
@@ -575,8 +576,8 @@ const fetchDataFromAPI = () => {
               //   tracking(stall.uno, 'product', imageDescription);
               //   trackinga('product', 'hallpage');
               // });
-              var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
-              if (videoUrl) {
+              // var videoUrl = "https://youtu.be/R-Lf7T7wg3A?si=AKc2MqWpEcbm8_o3"
+              if (stall.products[imageIndex].product_youtube_link != "") {
                 // If a video link exists, use the mouseenter event to show the video popup
                 imageElement.addEventListener('click', function () {
                   overalloverlay.style.display = 'flex';
@@ -593,7 +594,7 @@ const fetchDataFromAPI = () => {
                   // Retrieve the dynamic video URL and update the Video.js player
                   // var videoUrl = stall.products[imageIndex].videoUrl;
                   var player = videojs('youtubePlayer');
-                  player.src({ type: 'video/youtube', src: videoUrl });
+                  player.src({ type: 'video/youtube', src: stall.products[imageIndex].product_youtube_link });
                   player.play();
 
                   tracking(stall.uno, 'product', imageDescription);
@@ -806,36 +807,36 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelector('.iframeImg').addEventListener('click', function () {
   overalloverlay.style.display = 'none';
 });
-if (useragent == 'mobile') {
-  document.getElementById('chat-icon123').style.display = 'none';
-  //   document.querySelector('.switch').style.display="block"
-  document.querySelector('.tooltiptwo').addEventListener('click', function () {
-    overalloverlay.style.display = 'flex';
-    document.querySelector('.loading-container1').style.visibility = 'visible';
-    document.querySelector('.loading-text1').style.visibility = 'visible';
-    document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectory.cfm`);
-    document.getElementById('iframe-expoDir').onload = function () {
-      // Hide the loading animation once the iframe is loaded
-      document.querySelector('.loading-container1').style.visibility = 'hidden';
-      document.querySelector('.loading-text1').style.visibility = 'hidden';
-    };
-  });
-} else {
-  document.getElementById('stick').style.display = 'none';
-  //  document.querySelector('.switch').style.display="none"
-  document.querySelector('.tooltiptwo').addEventListener('click', function () {
-    overalloverlay.style.display = 'flex';
-    document.querySelector('.loading-container1').style.visibility = 'visible';
-    document.querySelector('.loading-text1').style.visibility = 'visible';
+// if (useragent == 'mobile') {
+//   // document.getElementById('chat-icon123').style.display = 'none';
+//   //   document.querySelector('.switch').style.display="block"
+//   document.querySelector('.tooltiptwo').addEventListener('click', function () {
+//     overalloverlay.style.display = 'flex';
+//     document.querySelector('.loading-container1').style.visibility = 'visible';
+//     document.querySelector('.loading-text1').style.visibility = 'visible';
+//     document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectoryMobile.cfm`);
+//     document.getElementById('iframe-expoDir').onload = function () {
+//       // Hide the loading animation once the iframe is loaded
+//       document.querySelector('.loading-container1').style.visibility = 'hidden';
+//       document.querySelector('.loading-text1').style.visibility = 'hidden';
+//     };
+//   });
+// } else {
+//   document.getElementById('stick').style.display = 'none';
+//   //  document.querySelector('.switch').style.display="none"
+//   document.querySelector('.tooltiptwo').addEventListener('click', function () {
+//     overalloverlay.style.display = 'flex';
+//     document.querySelector('.loading-container1').style.visibility = 'visible';
+//     document.querySelector('.loading-text1').style.visibility = 'visible';
 
-    document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectory.cfm`);
-    document.getElementById('iframe-expoDir').onload = function () {
-      // Hide the loading animation once the iframe is loaded
-      document.querySelector('.loading-container1').style.visibility = 'hidden';
-      document.querySelector('.loading-text1').style.visibility = 'hidden';
-    };
-  });
-}
+//     document.getElementById('iframe-expoDir').setAttribute('src', `https://expo1.marketcentral.in/expoDirectory.cfm`);
+//     document.getElementById('iframe-expoDir').onload = function () {
+//       // Hide the loading animation once the iframe is loaded
+//       document.querySelector('.loading-container1').style.visibility = 'hidden';
+//       document.querySelector('.loading-text1').style.visibility = 'hidden';
+//     };
+//   });
+// }
 
 var bgContainer = document.getElementById('mapText');
 var cards = [];
