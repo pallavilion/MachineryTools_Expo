@@ -11,11 +11,11 @@ const textlanguage = localStorage.getItem('languageselection');
 //   // Default message in English
 //   message = `Hello ${localStorage.getItem('UserName')}, how can I help you?`;
 // }
-const socket = io('https://expochatserver.marketcentral.in/'); // Replace with your actual server URL
+const socket = io('https://mcexpochatserver.marketcentral.in/'); // Replace with your actual server URL
 console.log(socket);
 const Postroom = async function (businessID, businessName) {
   try {
-    const response = await fetch(`https://expochatapis.marketcentral.in/api/ExpoChat/PostChatRoom`, {
+    const response = await fetch(`https://mcexpochatapis.marketcentral.in/api/ExpoChat/PostChatRoom`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

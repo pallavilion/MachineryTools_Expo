@@ -8,13 +8,13 @@ function checkurlparm(urlparameter) {
   }
 }
 import { io } from 'https://cdn.socket.io/4.5.4/socket.io.esm.min.js';
-const socket = io('https://expochatserver.marketcentral.in/');
+const socket = io('https://mcexpochatserver.marketcentral.in/');
 
 // Function to call your API and create a chat room
 const Postroom = async function (businessID, businessName) {
   try {
     const userName = localStorage.getItem('UserName');
-    const response = await fetch(`https://expochatapis.marketcentral.in/api/ExpoChat/PostChatRoom`, {
+    const response = await fetch(`https://mcexpochatapis.marketcentral.in/api/ExpoChat/PostChatRoom`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

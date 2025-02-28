@@ -100,11 +100,6 @@ body {
   overflow: hidden !important;
 }
 
-.loading-container img {
-  width: 200px; /* Adjust this value to your desired width */
-  height: 200px; /* Adjust this value to your desired height */
-}
-
 .loading-container p {
   margin-top: 12px; /* Adjust this value to your desired margin */
   font-size: 16px;
@@ -339,6 +334,10 @@ iframe {
 
   margin-bottom: 30px;
   bottom: 0;
+}
+.loading-container1 img {
+  width: 150px; /* Loading image size */
+  height: 150px;
 }
 .mblchatDisplay {
   border-radius: 6px;
@@ -609,6 +608,10 @@ iframe {
 @media only screen and (max-width: 992px) {
   .indidualChatIcons a {
     display: flex !important;
+  }
+  #loading-cnt img {
+    max-width: 100px !important;
+    padding-bottom: 25px;
   }
   .instruction > img {
     width: 100%;
@@ -2103,6 +2106,10 @@ iframe {
     z-index: 99;
     margin-bottom: 10px;
   }
+  #loading-cnt img {
+    max-width: 100px !important;
+    width: 100% !important;
+  }
   #guideModal.modal {
     z-index: 999;
   }
@@ -2196,11 +2203,6 @@ iframe {
   z-index: 10000;
   visibility: visible; /* Initially hidden */
   overflow: hidden !important;
-}
-
-.loading-container1 img {
-  width: 150px; /* Loading image size */
-  height: 150px;
 }
 
 .loading-container1 p {
