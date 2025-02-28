@@ -52,7 +52,7 @@ else if (window.location.href.includes('www') || window.location.href.includes('
 else {
   urlendpoint = 'https://www.marketcentral.in';
 }
-const endpoint_ExhibitionId = '4';
+const endpoint_ExhibitionId = '2';
 
 var overalloverlay = document.getElementById('overallOverLay');
 

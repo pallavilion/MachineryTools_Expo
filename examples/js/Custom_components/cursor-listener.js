@@ -147,16 +147,16 @@ AFRAME.registerComponent('cursor-listener-chat', {
   },
   init: function () {
     var data = this.data;
-    var iframe = document.getElementById('chatui2'); // Assuming the iframe ID is 'chatui2'
-    var container = document.getElementById('chat-ui-room2');
+    // var iframe = document.getElementById('chatui2'); // Assuming the iframe ID is 'chatui2'
+    // var container = document.getElementById('chat-ui-room2');
 
     this.el.addEventListener('click', function () {
       console.log('Click event triggered!');
       console.log('Target page:', data.targetPage);
 
       // Show the chat container if hidden
-      container.style.display = 'block';
-      iframe.setAttribute('src', data.targetPage);
+      // container.style.display = 'block';
+      // iframe.setAttribute('src', data.targetPage);
 
       // Log additional data
       console.log('Uno:', data.uno);

@@ -335,9 +335,9 @@ iframe {
   margin-bottom: 30px;
   bottom: 0;
 }
-.loading-container1 img {
-  width: 150px; /* Loading image size */
-  height: 150px;
+#loading-cnt img {
+  max-width: 150px !important;
+  width: 100% !important;
 }
 .mblchatDisplay {
   border-radius: 6px;
@@ -2105,10 +2105,6 @@ iframe {
     position: absolute;
     z-index: 99;
     margin-bottom: 10px;
-  }
-  #loading-cnt img {
-    max-width: 100px !important;
-    width: 100% !important;
   }
   #guideModal.modal {
     z-index: 999;

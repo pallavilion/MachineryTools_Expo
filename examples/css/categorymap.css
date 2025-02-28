@@ -54,10 +54,7 @@ h6 {
   box-shadow: none !important;
   border-color: #164fb1 !important;
 }
-.dropdown-menu.show {
-  height: 175px;
-  overflow: scroll;
-}
+
 .dropdown-item:focus,
 .dropdown-item:hover {
   border-color: #164fb1 !important;
@@ -285,8 +282,10 @@ p.categoryName {
     font-size: 16px;
   }
 }
+
 .dropdown-menu.show {
-  height: 175px;
+  max-height: 175px;
   overflow: scroll;
+  height: fit-content;
   min-width: unset !important;
 }

@@ -57,7 +57,7 @@ function tracking(uno = 0, track_type, pname = "", websitename = "") {
     "Source": "Direct",
     "browser": browser,
     "ipaddress": ipAddress,
-    "exhibition_ID": 5,
+    "exhibition_ID": 6,
     "visitor_guid": guid
   }
   console.log(requestBody)
@@ -99,7 +99,7 @@ function sendbeaconapi(uno = 0, track_type, pname = "") {
     "Source": "Direct",
     "browser": browser,
     "ipaddress": ipAddress,
-    "exhibition_ID": 5,
+    "exhibition_ID": 6,
     "visitor_guid": guid
   }
   trackinga(track_type, pagetitle)
@@ -130,7 +130,7 @@ function sendBeaconapilobby(uno = 0, track_type, pname = "") {
     "Source": "Direct",
     "browser": browser,
     "ipaddress": ipAddress,
-    "exhibition_ID": 5,
+    "exhibition_ID": 6,
     "visitor_guid": guid
   }
   trackinga(track_type, pagetitle)
@@ -158,7 +158,7 @@ function sendBeaconapicategorylb(uno = 0, track_type, pname = "", links, pagetit
     "Source": "Direct",
     "browser": browser,
     "ipaddress": ipAddress,
-    "exhibition_ID": 5,
+    "exhibition_ID": 6,
     "visitor_guid": guid
   }
   trackinga(track_type, pagetitle)

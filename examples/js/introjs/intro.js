@@ -139,7 +139,7 @@ document.getElementById('enterExpo-btn').addEventListener('click', function () {
   sendbeaconapi(0, 'Enter-expo-button', '', '');
   trackinga('Enter-expo', 'indexpage');
   const requestBody = {
-    exhibition_ID: 5,
+    exhibition_ID: 6,
     visitor_guid: guid,
     visitor_name: localStorage.getItem('UserName'),
     ipaddress: ipAddress

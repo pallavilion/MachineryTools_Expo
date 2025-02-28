@@ -12352,10 +12352,13 @@
             }), " ", /* @__PURE__ */ jsx("p", {
               children: "Take Photo"
             })]
-          }), errors.image && /* @__PURE__ */ jsx("span", {
-            className: "error",
-            children: errors.image
           })]
+        }), inputType === "business-card" && !selectedImage && errors.image && /* @__PURE__ */ jsx("div", {
+          className: "error-container",
+          children: /* @__PURE__ */ jsx("span", {
+            className: "errorBc",
+            children: errors.image
+          })
         }), isCameraActive && /* @__PURE__ */ jsxs("div", {
           className: "camera-sectionBc",
           children: [/* @__PURE__ */ jsx("video", {
