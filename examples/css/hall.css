@@ -21,6 +21,9 @@ body {
   overflow: hidden;
 }
 /* chat slide */
+#loading-cnt1 img {
+  max-width: 150px;
+}
 .slideText {
   font-size: 16px;
   padding: 5px 10px;
@@ -335,7 +338,8 @@ iframe {
   margin-bottom: 30px;
   bottom: 0;
 }
-#loading-cnt img {
+#loading-cnt img,
+#loading-cnt1 img {
   max-width: 150px !important;
   width: 100% !important;
 }
@@ -609,7 +613,8 @@ iframe {
   .indidualChatIcons a {
     display: flex !important;
   }
-  #loading-cnt img {
+  #loading-cnt img,
+  #loading-cnt1 img {
     max-width: 100px !important;
     padding-bottom: 25px;
   }

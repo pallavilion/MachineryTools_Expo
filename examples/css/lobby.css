@@ -1,5 +1,3 @@
-
-
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -16,8 +14,7 @@
 }
 
 .loading-container img {
-  width: 200px; /* Adjust this value to your desired width */
-  height: 200px; /* Adjust this value to your desired height */
+  max-width: 150px;
 }
 
 .loading-container p {
@@ -446,6 +443,9 @@ iframe {
   iframe {
     width: 510px !important;
     height: 300px !important;
+  }
+  .loading-container img {
+    max-width: 100px;
   }
 }
 #closeIcon {
