@@ -686,8 +686,16 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
   </body>
   <script>
     window.onload = function () {
+      const queryString = window.location.search;
+      let urlParams1 = new URLSearchParams(queryString);
+      var utmSource = urlParams1.get('utm_source');
+      if (utmSource) {
+        var utmCompaign = urlParams1.get('utm_campaign');
+        let utmCampaignId = utmSource.concat('-', utmCompaign);
+        console.log('utm_campaign_id', utmCampaignId);
+        tracking(0, `whatsapp_${utmCampaignId}`, '');
+      }
       tracking(0, 'exhibition', '');
-      //  trackExpo(0, "exhibition3", "", ipAddress);
     };
   </script>
 
@@ -737,4 +745,6 @@ https://www.facebook.com/tr?id=650359962660363&ev=PageView&noscript=1"
       // Add more assets as needed
     });
   </script>
+
+ 
 </html>

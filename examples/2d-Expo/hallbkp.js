@@ -165,8 +165,7 @@ function renderStalls() {
       index + 1
     }, ${index})" src="./assetsnew/icons/share stall.png">
                 <!-- Chat button calls our new handleStallChat function -->
-                <img class="mediaIcons" id="chaticon_${index}" onclick="handleStallChat(${stall.uno}, '${
-      stall.vendorInfo.companyname
+                <img class="mediaIcons" id="chaticon_${index}" onclick="handleStallChat(${stall.uno}, '${stall.vendorInfo.companyname
     }', ${index})" src="./assetsnew/icons/msg.png">
               </div>
             </div>
@@ -180,27 +179,20 @@ function renderStalls() {
                 <div class="hallNum">
                   <p class="stallNum">Stall No:<span>${index + 1}</span></p>
                   <div class="icons">
-                    <a href="${stall.websiteLink}" target="_blank"><img src="./assetsnew/icons/web.png"></a>
-                    ${
-                      stall.broucherlinkAvailable === 'yes'
-                        ? `<a href="${stall.broucherlink}" target="_blank" id="broucher${
-                            index + 1
-                          }"><img src="./assetsnew/icons/pdf.png"></a>`
-                        : '<a target="_blank" onclick="alertbroucher()"><img src="./assetsnew/icons/pdf.png"></a>'
-                    }
-                    <a href="${stall.businesscard}" target="_blank"><img src="./assetsnew/icons/contact.png"></a>
-                    <!-- New icon for triggering changebusinessid -->
-                    <a href="javascript:void(0)" onclick="changebusinessid(${stall.uno}, '${localStorage.getItem(
-      'UserName'
-    )}')">
-                      <img src="./assetsnew/icons/drop-business-card-icon.png" alt="Upload Business Card">
+                    <a href="javascript:void(0)" ><img src="./assetsnew/icons/web.png" onclick="tracking2D(${stall.uno},'websiteLink-2D','${stall.websiteLink}')" ></a>
+                    ${stall.broucherlinkAvailable === 'yes'
+      ? `<a href="javascript:void(0)" id="broucher${index + 1}"  onclick="tracking2D(${stall.uno},'broucher-2D','${stall.broucherlink}')"><img src="./assetsnew/icons/pdf.png"></a>`
+      : `<a onclick="alertbroucher()"><img src="./assetsnew/icons/pdf.png" onclick="tracking2D(${stall.uno},'broucher-2D','${stall.broucherlink}')" ></a>`
+      }
+                <a href="javascript:void(0)"><img src="./assetsnew/icons/contact.png" onclick="tracking2D(${stall.uno},'businessCard-2D','${stall.businesscard}')">
                     </a>
-                    <a href="mailto:${
-                      stall.vendorInfo.email
-                    }" target="_blank"><img src="./assetsnew/icons/Mail.png"></a>
-                    <a href="tel:+91${
-                      stall.vendorInfo.contactNumber
-                    }" target="_blank"><img src="./assetsnew/icons/call.png"></a>
+                    <!-- New icon for triggering changebusinessid -->
+                    <a href="javascript:void(0)" onclick="changebusinessid(${stall.uno}, '${localStorage.getItem('UserName')}')">
+                      <img src="./assetsnew/icons/drop-business-card-icon.png" alt="Upload Business Card" >
+                    </a>
+                    <a href="javascript:void(0)">
+                    <img src="./assetsnew/icons/Mail.png" onclick="tracking2D(${stall.uno},'vendorEmail-2D','mailto:${stall.vendorInfo.email}')"></a>
+                    <a href="javascript:void(0)"><img src="./assetsnew/icons/call.png" onclick="tracking2D(${stall.uno},'vendorContact-2D','tel:+91${stall.vendorInfo.contactNumber}')"></a>
                   </div>
                 </div>
               </div>
@@ -541,7 +533,37 @@ function isStallVisitedforchat(stallId) {
 function changebusinessid(bussinessId, custid) {
   MyBusinessCardPlugin.openUploadcard('root', false, bussinessId, custid);
 }
+function tracking2D(businessUno, trackType, url) {
 
+  // tracking(businessUno, trackType, '', '');
+  switch (trackType) {
+    case 'websiteLink-2D':
+      tracking(businessUno, 'websiteLink-2D', '');
+      window.open(url, '_blank');
+
+      break;
+    case 'broucher-2D':
+      tracking(businessUno, 'broucher-2D', '');
+      window.open(url, '_blank');
+      break;
+    case 'businessCard-2D':
+      tracking(businessUno, 'businessCard-2D', '');
+      window.open(url, '_blank');
+      break;
+    case 'vendorEmail-2D':
+      tracking(businessUno, 'vendorEmail-2D', '');
+      window.location.href = url;
+      break;
+    case 'vendorContact-2D':
+      tracking(businessUno, 'vendorContact-2D', '');
+      window.open(url, '_blank');
+      break;
+    default:
+      console.log('No tracking found for type', trackType);
+      break;
+  }
+
+}
 window.handleStallChat = handleStallChat;
 window.showStall = showStall;
 window.showStalls = showStalls;
@@ -555,3 +577,4 @@ window.alertbroucher = alertbroucher;
 window.navigatetolobby = navigatetolobby;
 window.closechat = closechat;
 window.closechatone = closechatone;
+window.tracking2D = tracking2D

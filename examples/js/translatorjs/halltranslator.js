@@ -9,8 +9,7 @@ const datalanguage = {
        "Exitfullscreen":"Exit Full Screen",
        "loadingtext":"Please wait while your virtual experience loads",
        "sharestalllink": "Share Stall Link",
-       "stalllink": 
-           "Stall Link",
+       "stalllink": "Stall Link",
         "copy":"Copy",
         "shareproductlink":"Share Product Link",
         "productlink":"Product Link",
@@ -135,7 +134,8 @@ const datalanguage = {
 }
 };
 const language = localStorage.getItem('languageselection')
-const chat = document.querySelector('.labelchat')
+console.log(`Language: ${language}`)
+
 const explore = document.querySelector('.labelexplore')
 const exit = document.querySelector('.labelexit')
 const category = document.querySelector('.labelcategory')
@@ -151,7 +151,7 @@ const helptext = document.querySelector('.labelhelp')
 const mblhelptext = document.querySelector('.labelhelpmbl')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
 const buttonText = fullscreenButton.textContent;
-chat.textContent=datalanguage[language].labelchat
+
 explore.textContent=datalanguage[language].labelexplore
 exit.textContent=datalanguage[language].labelexit
 category.textContent=datalanguage[language].labelcategory
@@ -164,7 +164,7 @@ joinText.textContent=datalanguage[language].joinText
 sessionText.textContent =datalanguage[language].jointhesession
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
 helptext.textContent=datalanguage[language].helptext
-mblhelptext.textContent=datalanguage[language].helptext
+mblhelptext.textContent = datalanguage[language].helptext
 if(buttonText=="Enter Full Screen"){
     fullscreenButton.textContent=datalanguage[language].fullscreenButton
 }
