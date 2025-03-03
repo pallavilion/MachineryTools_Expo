@@ -70,7 +70,7 @@ function closePopup1() {
 
 // Function to fetch data from the API and update the scene
 let requestBody={
-    exhibition_ID: '2',
+    exhibition_ID: '6',
     start:'1',
     end:'1',
     category:"0",
@@ -353,7 +353,7 @@ var currentIndex=0;
 let buttonid=0;
 // category map js
 
-fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/4`)
+fetch(`${urlendpoint}/rest/virtualExpo/general/getBusinesses/6`)
 .then(response => response.json())
 .then(apiData => {
     data = apiData; // Assign data from API to the global variable

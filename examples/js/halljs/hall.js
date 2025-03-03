@@ -52,7 +52,7 @@ else if (window.location.href.includes('www') || window.location.href.includes('
 else {
   urlendpoint = 'https://www.marketcentral.in';
 }
-const endpoint_ExhibitionId = '2';
+const endpoint_ExhibitionId = '6';
 
 var overalloverlay = document.getElementById('overallOverLay');
 
@@ -215,7 +215,7 @@ document.getElementById('fullscreenButton').addEventListener('click', function (
 });
 // Function to fetch data from the API and update the scene
 let requestBody = {
-  exhibition_ID: '2',
+  exhibition_ID: '6',
   start: '1',
   end: '10',
   category: '0',
@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //console.log('Start:', start); // Output: 1
     //console.log('End:', end);
     requestBody = {
-      exhibition_ID: '2',
+      exhibition_ID: '6',
       start: `${start}`,
       end: `${end}`,
       category: '0',
@@ -765,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //console.log('End:', end1);
     //    debugger
     requestBody = {
-      exhibition_ID: '2',
+      exhibition_ID: '6',
       start: `${start}`,
       end: `${end}`,
       category: '0',

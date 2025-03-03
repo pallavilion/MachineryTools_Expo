@@ -65,7 +65,7 @@ if (window.location.href.includes('digiexpodev.marketcentral')) {
 }
 
 let requestBody = {
-  exhibition_ID: '2',
+  exhibition_ID: '6',
   start: '1',
   end: '10',
   category: '0',

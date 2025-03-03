@@ -12005,7 +12005,7 @@
           ...prev,
           name: (localdata == null ? void 0 : localdata.name) || "",
           email: (localdata == null ? void 0 : localdata.email) || "",
-          phone: (localdata == null ? void 0 : localdata.phone) || "",
+          phone: (localdata == null ? void 0 : localdata.phoneNumber) || "",
           description: (localdata == null ? void 0 : localdata.description) || ""
         }));
         if (localdata.imagePath != null) {
@@ -12024,7 +12024,7 @@
     }, [customerId]);
     function getBusiness() {
       if (!localStorage.getItem("business")) {
-        fetch("https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/2").then((response) => response.json()).then((data) => {
+        fetch("https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/6").then((response) => response.json()).then((data) => {
           const categories = data.map((item) => item);
           setCategoryItems(categories);
           setLoadingCategories(false);

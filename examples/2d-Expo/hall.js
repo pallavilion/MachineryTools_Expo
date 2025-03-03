@@ -30,7 +30,7 @@ else {
     urlendpoint = 'https://www.marketcentral.in';
 }
 let requestBody = {
-        exhibition_ID: '2',
+        exhibition_ID: '6',
         start: '1',
         end: '10',
         category: "0",
@@ -171,7 +171,7 @@ function checkurlparm(urlparameter){
 
 let hallbtndata;
 let filterdata
-let hallbtnurl="https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/3"
+let hallbtnurl="https://www.marketcentral.in/rest/virtualExpo/general/getBusinesses/6"
 fetch(hallbtnurl)
       .then(response => response.json())
       .then(data => {
