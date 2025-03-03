@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="keyphrase" content="Exclusive 3D platform" />
+    <meta name="keyphrase" content="Exclusive 3D platform" />
     <meta name="meta title" content="Explore India's Finest Machine Tools businesses at the Expo Hall" />
     <meta
       name="keywords"
@@ -15,6 +15,7 @@
     />
     <title>Explore India's Finest Machine Tools businesses at the Expo Hall</title>
     <link rel="icon" type="image/x-icon" href="assetsnew/logo/expo-logo.png" />
+     <script src="./js/track js/hotJarTracking.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="js/categoryjs/networkspeed.js"></script>
@@ -31,23 +32,23 @@
     <script src="js/track js/tracking-ga.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGGTB73FL0"></script>
     <script async src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-      <script>
+    <script>
       function changebusinessid(custid) {
-        MyBusinessCardPlugin.openUploadcard("root", true,"",custid);
+        MyBusinessCardPlugin.openUploadcard('root', true, '', custid);
       }
-      </script>
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <div class="categoryMap">
-     
       <div class="categoryMapContents">
         <h2 class="categoryheading">Get Started</h2>
         <p class="categoryDescription">Find what you need by Category</p>
       </div>
-       <div onclick="changebusinessid(localStorage.getItem('UserName'))" class="drop-business-card-category">
-          <img src="./assetsnew/icons/drop-business-card-icon.png" alt="" class="drop-business-card-category-image">
-        <span class="mbl_none">Drop Business Card</span></div>
+      <div onclick="changebusinessid(localStorage.getItem('UserName'))" class="drop-business-card-category">
+        <img src="./assetsnew/icons/drop-business-card-icon.png" alt="" class="drop-business-card-category-image" />
+        <span class="mbl_none">Drop Business Card</span>
+      </div>
       <div class="categories">
         <div class="categoryContents" id="categoryContents">
           <!-- api dynamic rendering -->
@@ -70,7 +71,7 @@
     href="
     https://dev.visualwebsiteoptimizer.com"
   />
-   <script src="businesscardscript/businessCard-drop.umd.js"></script>
+  <script src="businesscardscript/businessCard-drop.umd.js"></script>
   <script type="text/javascript" id="vwoCode">
     window._vwo_code ||
       (function () {
@@ -319,6 +320,13 @@
       assets.appendChild(model3);
 
       // Add more assets as needed
+    });
+  </script>
+
+  <script>
+    document.getElementById('root').addEventListener('click', () => {
+      tracking(0, 'drop-BusinessCard', '');
+      trackinga('drop-BusinessCard', 'categoryPage');
     });
   </script>
 </html>

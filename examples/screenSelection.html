@@ -14,6 +14,17 @@
       content="Step into the Machine Tools Expo Online Hall to discover stalls from leading manufacturers and suppliers across India."
     />
     <title>Explore India's Finest Machine Tools businesses at the Expo Hall</title>
+    <script src="./js/track js/hotJarTracking.js" defer></script>
+    <script src="js/ip-address.js"></script>
+    <script src="jslibrary/track.js"></script>
+    <script src="js/track js/tracking-ga.js"></script>
+    <script src="js/track js/ua-parser.js"></script>
+    <script src="js/track js/trackapi.js"></script>
+    <script
+      async
+      src="
+https://www.googletagmanager.com/gtag/js?id=AW-11323683479"
+    ></script>
     <style>
       /* Global reset */
       * {
@@ -76,7 +87,7 @@
       }
 
       /* Hide the default radio button */
-      .card input[type="radio"] {
+      .card input[type='radio'] {
         display: none;
       }
 
@@ -100,7 +111,7 @@
       }
 
       /* Highlight the selected card with a border */
-      .card input[type="radio"]:checked + .card-content {
+      .card input[type='radio']:checked + .card-content {
         border: 2px solid #0280bf;
       }
 
@@ -149,20 +160,22 @@
       <button class="next-btn" onclick="handleNext()">Next</button>
     </div>
 
-   <script src="js/track js/ua-parser.js"></script>
+    <script src="js/track js/ua-parser.js"></script>
     <script>
       let autoRedirectTimer;
 
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        trackinga('screenSelection', 'screenSelectionPage');
         // Parse the user agent
+
         var parser = new UAParser();
         var result = parser.getResult();
         var deviceType = result.device.type; // will be "mobile" on mobile devices
 
         // If not mobile, remove the 2D card so only 3D is available.
-        if (deviceType !== "mobile") {
-          const cardsContainer = document.querySelector(".cards-container");
-          const firstCard = cardsContainer.querySelector("label.card:first-child");
+        if (deviceType !== 'mobile') {
+          const cardsContainer = document.querySelector('.cards-container');
+          const firstCard = cardsContainer.querySelector('label.card:first-child');
           if (firstCard) {
             firstCard.remove();
           }
@@ -182,20 +195,31 @@
 
         const selected = document.querySelector('input[name="screen"]:checked');
         if (!selected) {
-          alert("Please select a screen mode.");
+          alert('Please select a screen mode.');
           return;
         }
 
         // Save the selection to local storage.
-        localStorage.setItem("screenSelection", selected.value);
+        localStorage.setItem('screenSelection', selected.value);
 
+        sendbeaconapi(0, selected.value, '', '');
+        trackinga(selected.value, 'screenSelection');
         // Redirect based on the selected option.
-        if (selected.value === "2D") {
-          window.location.href = "categorymapdynmic.html"; // Update with your actual 2D page URL.
-        } else if (selected.value === "3D") {
-          window.location.href = "categorymapdynmic.html"; // Update with your actual 3D page URL.
+        if (selected.value === '2D') {
+          window.location.href = 'categorymapdynmic.html'; // Update with your actual 2D page URL.
+        } else if (selected.value === '3D') {
+          window.location.href = 'categorymapdynmic.html'; // Update with your actual 3D page URL.
         }
       }
+    </script>
+       <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11323683479');
     </script>
   </body>
 </html>

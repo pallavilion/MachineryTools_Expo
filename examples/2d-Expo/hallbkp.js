@@ -193,7 +193,7 @@ function renderStalls() {
                     <a href="javascript:void(0)" onclick="changebusinessid(${stall.uno}, '${localStorage.getItem(
       'UserName'
     )}')">
-                      <img src="../assetsnew/icons/business-card.png" alt="Upload Business Card">
+                      <img src="./assetsnew/icons/drop-business-card-icon.png" alt="Upload Business Card">
                     </a>
                     <a href="mailto:${
                       stall.vendorInfo.email
@@ -208,6 +208,7 @@ function renderStalls() {
           </div>
         </div>
       </div>
+      
       <div class="digitalPopUp" id="digitalPopUp_${index}">
         <div class="digitalPopUpContents">
           <img class="closeImg" src="./assetsnew/icons/blueCloseIcon.png" onclick="closepopup(${index})">
@@ -277,7 +278,7 @@ function renderStalls() {
         productImage.src = product.producturl;
         productImage.alt = product.productname;
         productImage.addEventListener('click', function () {
-          showpopup(product.productname, product.price, product.producturl, product.productlink, index);
+          showpopup(product.productname, product.price, product.producturl, product.productlink, index,stall.uno);
           console.log(product.productname);
         });
         productSection.appendChild(productImage);
@@ -298,6 +299,7 @@ function renderStalls() {
 }
 
 async function showStall(index) {
+
   const stalls = document.querySelectorAll('.stall');
   stalls.forEach((stall) => {
     stall.classList.remove('active');
@@ -311,6 +313,7 @@ async function showStall(index) {
   // If the stall hasn't been visited, call Postroom and emit the event
   if (!isStallVisited(stallId)) {
     console.log('inside showStall check for stall:', stallId);
+    tracking(stallId, '2D-visited-stall', '');
     markStallVisited(stallId);
     try {
       const data = await Postroom(stallId, currentStallData.vendorInfo.companyname);
@@ -384,14 +387,18 @@ function changehall(indexvalue) {
 fetchdata();
 
 // Function to show product details popup
-function showpopup(prdname, prdprice, prdlink, prdurl, index) {
+function showpopup(prdname, prdprice, prdlink, prdurl, index,uno) {
+  tracking(uno, '2D-product', prdname);
+  trackinga('2D-product', 'hallpage');
   document.getElementById(`productnameid_${index}`).textContent = prdname;
   document.getElementById(`productpriceid_${index}`).textContent = `Price: ${prdprice}`;
   document.getElementById(`productImgid_${index}`).src = prdlink;
   document.getElementById(`visitButtonid_${index}`).addEventListener('click', function () {
+    tracking(uno, "2D-visit-product", '')
     window.open(prdurl, '_blank');
   });
   document.getElementById(`shareButtonid_${index}`).addEventListener('click', function () {
+    tracking(uno, '2D-share-product', prdname);
     document.getElementById(`digitalPopUp_${index}`).style.display = 'none';
     document.getElementById(`popup-overlay_${index}`).style.display = 'flex';
     document.getElementById(`currentURL_${index}`).value = prdurl;
@@ -403,6 +410,7 @@ function showpopup(prdname, prdprice, prdlink, prdurl, index) {
 
 let selectedHallNumber = null;
 function shaerestall(uno, name, index) {
+  tracking(uno, '2D-share-stall', '');
   var currentURL1 = window.location.href;
   var baseURL = currentURL1.substr(0, currentURL1.lastIndexOf('/') + 1);
   var newURL = `${baseURL}sharestall.html?uno=${encryptWithCasePreservation(uno.toString())}&stallno=${name}`;
@@ -482,6 +490,7 @@ async function handleStallChat(stallnum, bname, index) {
   const room = `room_${userName}_${stallnum}`;
   console.log(room);
   if (!isStallVisited(stallnum)) {
+    tracking(stallnum, '2D-chat', '', '');
     markStallVisited(stallnum);
     socket.emit('stallVisited', { stallnum, bname, room });
   }

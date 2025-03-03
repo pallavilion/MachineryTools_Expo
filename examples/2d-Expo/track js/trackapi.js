@@ -117,7 +117,7 @@ function sendbeaconapi(uno = 0, track_type, pname = "") {
 
   } else {
     console.log("Failed to queue data for sending.");
-    window.location.href = `hall.html?category=${encrypt(category.CATEGORY)}`
+    window.location.href = `prototype.html?category=${encrypt(category.CATEGORY)}`
   }
 }
 
