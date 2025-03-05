@@ -187,6 +187,11 @@ span#namevalue {
 .images.mainImg .femaleAvtar {
   display: none;
 }
+/* @media only screen and (min-width: 1700px) {
+  .expo_logo {
+    max-width: 150px !important;
+  }
+} */
 @media only screen and (max-width: 1450px) {
   .welcomeHsptlText {
     font-size: 45px !important;
@@ -196,6 +201,9 @@ span#namevalue {
   }
   .enterExpoButton {
     padding: 12px 0;
+  }
+  .expo_logo {
+    max-width: 200px !important;
   }
 }
 @media only screen and (max-width: 1300px) {
