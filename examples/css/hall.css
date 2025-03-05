@@ -550,6 +550,10 @@ iframe {
   background: #164fb1;
   border: 1px solid #164fb1;
 }
+#visit-prdt-btn:hover {
+  color: #fff !important;
+}
+
 .visitButton1 {
   color: #fff;
   background: #164fb1;
@@ -1166,7 +1170,7 @@ iframe {
   }
 }
 
-#fullscreenButton {
+/* #fullscreenButton {
   z-index: 97;
   position: absolute;
   top: 1%;
@@ -1176,8 +1180,42 @@ iframe {
   color: #3c2b25;
   font-family: Roboto;
   cursor: pointer;
+} */
+.view_twoD {
+  z-index: 97;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  border-radius: 4px;
+  background-color: #e7f0ff;
+  color: #3c2b25;
+  font-family: Roboto;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.pulse {
+  animation: pulse-animation 2s infinite;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #66ff99;
+  background: #66ff99;
+  display: block;
 }
 
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+}
 #nextbutton {
   z-index: 99999;
   position: relative;
@@ -1633,6 +1671,12 @@ iframe {
   object-fit: cover;
 }
 /* Responsive media queries for landscape mode */
+@media (max-width: 768px) and (orientation: portrait) {
+  .digitalPopUpContents {
+    width: 90%;
+    margin: auto;
+  }
+}
 @media (max-width: 768px) and (orientation: landscape) {
   #main-popup {
     flex-direction: row;

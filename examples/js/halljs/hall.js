@@ -210,9 +210,9 @@ function removeEntities(stalls) {
     }
   });
 }
-document.getElementById('fullscreenButton').addEventListener('click', function () {
-  toggleFullScreen();
-});
+// document.getElementById('fullscreenButton').addEventListener('click', function () {
+//   toggleFullScreen();
+// });
 // Function to fetch data from the API and update the scene
 let requestBody = {
   exhibition_ID: '6',

@@ -419,9 +419,9 @@ if (deviceType === 'mobile') {
       <p class="loading-text">Please wait while your virtual experience loads!</p>
     </div>
   
-  
+    <button class="view_twoD"><span class="pulse"></span>Click here to view in 2D</button>
     <!-- fullscreen option enable and disable -->
-    <button id="fullscreenButton">Enter Full Screen</button>
+    <!-- <button id="fullscreenButton">Enter Full Screen</button> -->
     <!-- Visitor chat icon -->
     <!-- error message  -->
     <div id="overLaySection">
@@ -657,7 +657,7 @@ if (deviceType === 'mobile') {
         <a-asset-item id="halldoor" src="./assetsnew/doors/Hall door.glb"></a-asset-item>
         <a-asset-item id="hallmodel" src="./assetsnew/hallModel/HallOptimized.glb"></a-asset-item>
         <a-asset-item id="NovaFont" src="css/Fonts/ProximaNova-Bold.ttf"></a-asset-item>
-        <img id="leftarrow-icon" src="./assetsnew/icons/left arrow.pngg" alt="leftarrowicon"/>
+        <img id="leftarrow-icon" src="./assetsnew/icons/left arrow.png" alt="leftarrowicon"/>
         <img id="vendor-image" src="./assetsnew/icons/vendor-image.jpg" alt="vendorimage"/>
         <img id="share-button" src="./assetsnew/icons/shareButton.png" alt="sharebutton"/>
         <img id="visit-stall-button" src="./assetsnew/icons/visitHall-button.png" alt="stallbutton"/>
@@ -3116,11 +3116,16 @@ console.log("useragent:",useragent)
             //console.log(orientationscreen);
             //console.log(`after hitting the black screen`);
           } else {
+          
             //console.log("Device is in portrait orientation");
             //deviceOrientationElement.textContent = "Please Rotate Your Mobile";
             //deviceOrientationElement.style.display = "block";  // Show the content in portrait mode
             orientationscreen.style.display = 'block';
             document.getElementById('orientat-content').style.display = 'flex';
+            setTimeout(()=>{
+              orientationscreen.style.display = 'none';
+              document.getElementById('orientat-content').style.display = 'none';
+            },1000)
           }
         } else {
           orientationscreen.style.display = 'none';
