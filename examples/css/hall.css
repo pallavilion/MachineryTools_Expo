@@ -1216,6 +1216,11 @@ iframe {
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
   }
 }
+.view_twoD a{
+  color: #007bff!important;
+  text-decoration: underline!important;
+  background-color: transparent;
+}
 #nextbutton {
   z-index: 99999;
   position: relative;

@@ -168,9 +168,9 @@ function removeEntities(stalls) {
     document.getElementById(`stall${stallIndex + 1}`).setAttribute('visible', 'false');
     document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute('visible', 'false');
     document.getElementById(`bubble${stallIndex + 1}`).removeAttribute('activate-on-approach');
-    document.getElementById(`moveup${stallIndex + 1}`).setAttribute('visible', 'false');
+    // document.getElementById(`moveup${stallIndex + 1}`).setAttribute('visible', 'false');
     document.getElementById(`bubble${stallIndex + 1}`).setAttribute('visible', 'false');
-    document.getElementById('moveup51').setAttribute('visible', 'false');
+    // document.getElementById('moveup51').setAttribute('visible', 'false');
     // entity removal and adjust code
     const containerEntityb = document.createElement('a-entity');
     containerEntityb.setAttribute('position', '4.2 3.4 -6.87');
@@ -299,8 +299,8 @@ const fetchDataFromAPI = () => {
           const stallContainerId = `stall${stallIndex + 1}`;
           document.getElementById(`txtval${stallIndex + 1}`).setAttribute('value', stall.uno);
           document.getElementById(`stall${stallIndex + 1}`).setAttribute('visible', 'true');
-          document.getElementById(`moveup${stallIndex + 1}`).setAttribute('visible', 'true');
-          document.getElementById('moveup51').setAttribute('visible', 'false');
+          // document.getElementById(`moveup${stallIndex + 1}`).setAttribute('visible', 'true');
+          // document.getElementById('moveup51').setAttribute('visible', 'false');
           document.getElementById(`stall${stallIndex + 1}`).setAttribute('instanced-mesh-member', 'mesh:#mesh1');
           document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute('visible', 'true');
           document.getElementById(`stall-avatar${stallIndex + 1}`).setAttribute('instanced-mesh-member', 'mesh:#mesh2');
@@ -1129,7 +1129,7 @@ function checkhallfive(x) {
     // }
 
     if (x == 5) {
-      document.getElementById('moveup5').setAttribute('visible', 'false');
+      // document.getElementById('moveup5').setAttribute('visible', 'false');
     }
 
     // document.getElementById('stall5').setAttribute('visible','true')

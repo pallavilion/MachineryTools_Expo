@@ -5,8 +5,8 @@ const datalanguage = {
        "labelexplore":"Explore",
        "labelexit":"Lobby",
        "labelcategory":"Category",
-       "fullscreenButton":"Enter Full Screen",
-       "Exitfullscreen":"Exit Full Screen",
+    //    "fullscreenButton":"Enter Full Screen",
+    //    "Exitfullscreen":"Exit Full Screen",
        "loadingtext":"Please wait while your virtual experience loads",
        "sharestalllink": "Share Stall Link",
        "stalllink": "Stall Link",
@@ -27,8 +27,8 @@ const datalanguage = {
         "labelexplore":"एक्सप्लोर",
         "labelexit": "लॉबी",
         "labelcategory":"श्रेणी",
-        "fullscreenButton":"पूर्ण स्क्रीन दर्ज करें",
-        "Exitfullscreen":"पूर्ण स्क्रीन से बाहर निकलें",
+        // "fullscreenButton":"पूर्ण स्क्रीन दर्ज करें",
+        // "Exitfullscreen":"पूर्ण स्क्रीन से बाहर निकलें",
         "loadingtext":"कृपया अपने आभासी अनुभव के लोड होने तक प्रतीक्षा करें!",
         "sharestalllink": "शेयर स्टाल लिंक",
         "stalllink": 
@@ -49,8 +49,8 @@ const datalanguage = {
         "labelexplore": "అన్వేషించు",
         "labelexit": "లోబీ",
         "labelcategory": "వర్గం",
-        "fullscreenButton": "పూర్తి పర్దాలు ఎంటర్ చేయండి",
-        "Exitfullscreen": "పూర్తి పర్దాలు నిష్క్రమించండి",
+        // "fullscreenButton": "పూర్తి పర్దాలు ఎంటర్ చేయండి",
+        // "Exitfullscreen": "పూర్తి పర్దాలు నిష్క్రమించండి",
         "loadingtext": "మీ వర్చ్యువల్ అనుభవం లోడ్ అవుతోంది దయచేసి ఎప్పటికప్పుడు ఎప్పటికప్పుడు వేచి ఉంచండి",
         "sharestalllink": "స్టాల్ లింక్‌ను భాగించు",
         "stalllink": "స్టాల్ లింక్",
@@ -72,8 +72,8 @@ const datalanguage = {
     "labelexplore": "અન્વેષણ કરો",
    "labelexit": "લોબી",
     "labelcategory": "વર્ગ",
-    "fullscreenButton": "પૂર્ણ સ્ક્રીન પ્રવેશ કરો",
-    "Exitfullscreen": "પૂર્ણ સ્ક્રીન બહાર નીકળો",
+    // "fullscreenButton": "પૂર્ણ સ્ક્રીન પ્રવેશ કરો",
+    // "Exitfullscreen": "પૂર્ણ સ્ક્રીન બહાર નીકળો",
     "loadingtext": "કૃપા કરીને આપની વર્ચ્યુઅલ અનુભવ લોડ થઈ રહ્યું છે તમે વર્ચ્યુઅલ અનુભવ લોડ થઈ રહ્યો છે",
     "sharestalllink": "સ્ટોલ લિંક શેર કરો",
     "stalllink": "સ્ટોલ લિંક",
@@ -94,8 +94,8 @@ const datalanguage = {
     "labelexplore": "अन्वेषण करा",
    "labelexit": "लॉबी",
     "labelcategory": "श्रेणी",
-    "fullscreenButton": "पूर्णस्क्रीन प्रवेश करा",
-    "Exitfullscreen": "पूर्णस्क्रीन बाहेर पडा",
+    // "fullscreenButton": "पूर्णस्क्रीन प्रवेश करा",
+    // "Exitfullscreen": "पूर्णस्क्रीन बाहेर पडा",
     "loadingtext": "कृपया प्रतीक्षा करा जेव्हा आपला व्यार्चुअल अनुभव लोड होत आहे",
     "sharestalllink": "स्टॉल लिंक सामायिक करा",
     "stalllink": "स्टॉल लिंक",
@@ -116,8 +116,8 @@ const datalanguage = {
     "labelexplore": "অন্বেষণ করুন",
      "labelexit": "লবি",
     "labelcategory": "বিভাগ",
-    "fullscreenButton": "পূর্ণ স্ক্রিনে প্রবেশ করুন",
-    "Exitfullscreen": "পূর্ণ স্ক্রিন থেকে প্রস্থান করুন",
+    // "fullscreenButton": "পূর্ণ স্ক্রিনে প্রবেশ করুন",
+    // "Exitfullscreen": "পূর্ণ স্ক্রিন থেকে প্রস্থান করুন",
     "loadingtext": "আপনার ভার্চুয়াল অভিজ্ঞতা লোড হচ্ছে অনুগ্রহ করে অপেক্ষা করুন",
     "sharestalllink": "স্টল লিংক ভাগ করুন",
     "stalllink": "স্টল লিংক",
@@ -139,7 +139,7 @@ console.log(`Language: ${language}`)
 const explore = document.querySelector('.labelexplore')
 const exit = document.querySelector('.labelexit')
 const category = document.querySelector('.labelcategory')
-const fullscreenButton = document.querySelector('#fullscreenButton')
+// const fullscreenButton = document.querySelector('#fullscreenButton')
 const loadingtext = document.querySelector('.loading-text')
 const copytext = document.getElementById('copyButton') 
 const urlcopied = document.querySelector('#url-copied-alert-txt')
@@ -150,7 +150,7 @@ const sessionText= document.querySelector('.sessionText')
 const helptext = document.querySelector('.labelhelp')
 const mblhelptext = document.querySelector('.labelhelpmbl')
 const rotateyourmobile=document.querySelector('.rotateyourmobile')
-const buttonText = fullscreenButton.textContent;
+// const buttonText = fullscreenButton.textContent;
 
 explore.textContent=datalanguage[language].labelexplore
 exit.textContent=datalanguage[language].labelexit
@@ -165,9 +165,9 @@ sessionText.textContent =datalanguage[language].jointhesession
 rotateyourmobile.textContent=datalanguage[language].rotateyourmobile
 helptext.textContent=datalanguage[language].helptext
 mblhelptext.textContent = datalanguage[language].helptext
-if(buttonText=="Enter Full Screen"){
-    fullscreenButton.textContent=datalanguage[language].fullscreenButton
-}
+// if(buttonText=="Enter Full Screen"){
+//     fullscreenButton.textContent=datalanguage[language].fullscreenButton
+// }
 // else{
 //     fullscreenButton.textContent=data[language].Exitfullscreen
 // }
