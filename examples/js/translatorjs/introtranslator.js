@@ -15,7 +15,7 @@ var data = {
     {
         "welcomeIntro": "Welcome to",
         "welcomeHsptlText":
-            "Machine Tools Expo",
+            "Toys Expo",
         "enterExpoButton": "Enter Expo",
         "Avthartext": "Choose Your Avatar",
         "continuetext": "Enter Expo",
@@ -27,7 +27,7 @@ var data = {
     "hindi":
     {
         "welcomeIntro": "आपका स्वागत है",
-        "welcomeHsptlText": "मशीन टूल्स एक्सपो",
+        "welcomeHsptlText": "खिलौने एक्सपो",
         "enterExpoButton": "एक्सपो में प्रवेश करें",
         "Avthartext": "अपना अवतार चुनें",
         "continuetext": "एक्सपो दर्ज करें",
@@ -38,7 +38,7 @@ var data = {
     },
     "marathi": {
         "welcomeIntro": "स्वागत आहे",
-        "welcomeHsptlText": "मशीन टूल्स एक्सपो",
+        "welcomeHsptlText": "खेळणी एक्स्पो",
         "enterExpoButton": "एंटर एक्सपो",
         "Avthartext": "तुमचं अवतार निवडा",
         "continuetext": "एक्सपोमध्ये प्रवेश करा",
@@ -49,7 +49,7 @@ var data = {
     },
     "bengali": {
         "welcomeIntro": "স্বাগতম",
-        "welcomeHsptlText": "মেশিন টুলস এক্সপো",
+        "welcomeHsptlText": "খেলনা এক্সপো",
         "enterExpoButton": "এন্টার এক্সপো",
         "Avthartext": "আপনার অবতার চয়ন করুন",
         "continuetext": "এক্সপোতে প্রবেশ করুন",
@@ -61,7 +61,7 @@ var data = {
     "gujarati":
     {
         "welcomeIntro": "સ્વાગત છે",
-        "welcomeHsptlText": "મશીન ટૂલ્સ એક્સ્પો",
+        "welcomeHsptlText": "રમકડાં એક્સ્પો",
         "enterExpoButton": "એક્સપો પ્રવેશ કરો",
         "Avthartext": "તમારો આવતાર પસંદ કરો",
         "continuetext": "એક્સપોમાં પ્રવેશ કરો",
@@ -72,7 +72,7 @@ var data = {
     },
     "telugu": {
         "welcomeIntro": "స్వాగతం",
-        "welcomeHsptlText": "మెషిన్ టూల్స్ ఎక్స్‌పో",
+        "welcomeHsptlText": "టాయ్స్ ఎక్స్పో",
         "enterExpoButton": "ఎంటర్ ఎక్స్‌పో",
         "Avthartext": "మీ అవతారాన్ని ఎంచుకోండి",
         "continuetext": "ఎక్స్‌పోలో ప్రవేశించండి",
